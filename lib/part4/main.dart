@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
 
+// assets/images に画像を追加
+// pubspec.yaml に asstes パスを追加
+// オンラインで犬の画像を表示 URL
+// https://flutter-image-network.web.app/inu.jpeg
+
 void main() {
   // 画像
   final img = Image.asset(
