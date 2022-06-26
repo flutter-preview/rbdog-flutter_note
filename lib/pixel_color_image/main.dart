@@ -12,27 +12,19 @@ void onTap(int x, int y, Color color) async {
 }
 
 // main
-void main() async {
-  // はじめに imageBytes を読み込む
-
-  // アセットから画像を読み込むとき
-  final imageBytes = await getImageBytesAsset('images/banana.png');
-
-  // サーバーから画像を読み込むとき
-  // final imageBytes = await getImageBytesUrl('https://flutter-image-network.web.app/inu.jpeg');
-
-  // 専用の Widget を作る
-  final pixelColorImage = PixelColorImage(
-    imageBytes: imageBytes,
+void main() {
+  // 画像の Widget を作る
+  const img = PixelColor.assetImage(
+    path: 'images/banana.png',
     onHover: onHover,
     onTap: onTap,
   );
 
   // アプリ
-  final app = MaterialApp(
+  const app = MaterialApp(
     home: Scaffold(
       body: Center(
-        child: pixelColorImage, // アプリの中に表示する
+        child: img, // アプリの中に表示する
       ),
     ),
   );

@@ -1,6 +1,6 @@
 name: flutter_sample
 description: Fluuterの勉強に使うサンプルコードです
-publish_to: 'none'
+publish_to: "none"
 version: 1.0.0+1
 
 environment:
@@ -13,7 +13,7 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.2
-  pixel_color_image: 
+  pixel_color_image:
 
 dev_dependencies:
   flutter_test:
@@ -24,4 +24,3 @@ flutter:
   assets:
     - assets/images/
   uses-material-design: true
-  
