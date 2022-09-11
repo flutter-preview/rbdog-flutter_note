@@ -3,7 +3,7 @@
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   // Flutter
-  "dart.flutterSdkPath": "$ENV/flutter",
+  "dart.flutterSdkPath": "$HOME/dev/flutter",
   "dart.debugExternalPackageLibraries": false,
   "dart.debugSdkLibraries": false,
   "[dart]": {
