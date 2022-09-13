@@ -1,25 +1,24 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_sample/part11/router.dart';
+import 'package:go_router/go_router.dart';
 
 // 画面 B
-class PageB extends ConsumerWidget {
+class PageB extends StatelessWidget {
   const PageB({Key? key}) : super(key: key);
 
   // 進むボタンを押したとき
-  go(WidgetRef ref) {
-    final notifier = ref.read(pageNumberProvider.notifier);
-    notifier.state += 1;
+  go(BuildContext context) {
+    // 画面 C へ進む
+    context.push('/c');
   }
 
   // 戻るボタンを押したとき
-  back(WidgetRef ref) {
-    final notifier = ref.read(pageNumberProvider.notifier);
-    notifier.state -= 1;
+  back(BuildContext context) {
+    // 画面 戻る
+    context.pop();
   }
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  Widget build(BuildContext context) {
     // 画面の上に表示するバー
     final appBar = AppBar(
       backgroundColor: Colors.green,
@@ -28,13 +27,15 @@ class PageB extends ConsumerWidget {
 
     // 進むボタン
     final goButton = ElevatedButton(
-      onPressed: () => go(ref),
+      onPressed: () => go(context),
+      style: ElevatedButton.styleFrom(primary: Colors.blue),
       child: const Text('進む >'),
     );
 
     // 戻るボタン
     final backButton = ElevatedButton(
-      onPressed: () => back(ref),
+      onPressed: () => back(context),
+      style: ElevatedButton.styleFrom(primary: Colors.red),
       child: const Text('< 戻る'),
     );
 
@@ -42,11 +43,11 @@ class PageB extends ConsumerWidget {
     return Scaffold(
       appBar: appBar,
       body: Center(
-        child: Column(
+        child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            goButton,
             backButton,
+            goButton,
           ],
         ),
       ),

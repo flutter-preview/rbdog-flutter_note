@@ -1,41 +1,46 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_sample/part11/page_a.dart';
 import 'package:flutter_sample/part11/page_b.dart';
 import 'package:flutter_sample/part11/page_c.dart';
-import 'package:flutter_sample/part11/router.dart';
+import 'package:go_router/go_router.dart';
 
 main() {
-  const home = Home();
-  const app = MaterialApp(home: home);
-  const scope = ProviderScope(child: app);
-  runApp(scope);
+  final app = App();
+  runApp(app);
 }
 
-class Home extends ConsumerWidget {
-  const Home({Key? key}) : super(key: key);
+// アプリ全体
+class App extends StatelessWidget {
+  App({Key? key}) : super(key: key);
+
+  // ルーター
+  final router = GoRouter(
+    // パス (アプリが起動したとき)
+    initialLocation: '/a',
+    // パスと画面の組み合わせ
+    routes: [
+      GoRoute(
+        path: '/a',
+        builder: (context, state) => PageA(),
+      ),
+      GoRoute(
+        path: '/b',
+        builder: (context, state) => PageB(),
+      ),
+      GoRoute(
+        path: '/c',
+        builder: (context, state) => PageC(),
+      ),
+    ],
+  );
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final pageNumber = ref.watch(pageNumberProvider);
-    return Navigator(
-      pages: [
-        if (pageNumber >= 1)
-          const MaterialPage(
-            child: PageA(),
-          ),
-        if (pageNumber >= 2)
-          const MaterialPage(
-            child: PageB(),
-          ),
-        if (pageNumber >= 3)
-          const MaterialPage(
-            child: PageC(),
-          )
-      ],
-      onPopPage: ((route, result) {
-        return false;
-      }),
+  Widget build(BuildContext context) {
+    // 上の組み合わせを使ってアプリを表示
+    return MaterialApp.router(
+      routeInformationProvider: router.routeInformationProvider,
+      routeInformationParser: router.routeInformationParser,
+      routerDelegate: router.routerDelegate,
     );
   }
 }

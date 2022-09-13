@@ -1,19 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_sample/part11/router.dart';
+import 'package:go_router/go_router.dart';
 
 // 画面 A
-class PageA extends ConsumerWidget {
+class PageA extends StatelessWidget {
   const PageA({Key? key}) : super(key: key);
 
   // 進むボタンを押したとき
-  go(WidgetRef ref) {
-    final notifier = ref.read(pageNumberProvider.notifier);
-    notifier.state += 1;
+  go(BuildContext context) {
+    // 画面 B へ進む
+    context.push('/b');
   }
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  Widget build(BuildContext context) {
     // 画面の上に表示するバー
     final appBar = AppBar(
       backgroundColor: Colors.red,
@@ -22,7 +21,8 @@ class PageA extends ConsumerWidget {
 
     // 進むボタン
     final goButton = ElevatedButton(
-      onPressed: () => go(ref),
+      onPressed: () => go(context),
+      style: ElevatedButton.styleFrom(primary: Colors.green),
       child: const Text('進む >'),
     );
 
@@ -30,7 +30,7 @@ class PageA extends ConsumerWidget {
     return Scaffold(
       appBar: appBar,
       body: Center(
-        child: Column(
+        child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             goButton,
