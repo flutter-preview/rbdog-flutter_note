@@ -13,7 +13,7 @@ class PageB extends StatelessWidget {
 
   // 戻るボタンを押したとき
   back(BuildContext context) {
-    // 画面 戻る
+    // 前の画面 へ戻る
     context.pop();
   }
 
