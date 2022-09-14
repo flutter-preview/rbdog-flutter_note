@@ -8,12 +8,14 @@ class Tweet {
   final String iconUrl;
   // 文章メッセージ
   final String text;
-  // 送信時刻
+  // 送信日時
   final String createdAt;
+
+  // コンストラクタ
   Tweet(this.userName, this.iconUrl, this.text, this.createdAt);
 }
 
-// 適当なデータ
+// 適当なモデル
 final models = [
   Tweet('ルフィ', 'icon1.png', '海賊王におれはなる！', '2022/1/1'),
   Tweet('ゾロ', 'icon2.png', 'おれはもう！二度と敗けねェから！', '2022/1/2'),
@@ -40,7 +42,7 @@ final models = [
   Tweet('バルトロメオ', 'icon1.png', 'この子分盃!勝手に頂戴いたしますだべ!', '2022/3/1'),
 ];
 
-// モデル => Widget へ変換
+// モデル => ウィジェット に変換する
 Widget modelToWidget(Tweet model) {
   // ユーザーアイコン
   final icon = Container(
@@ -107,17 +109,25 @@ Widget modelToWidget(Tweet model) {
 
 // メイン関数
 void main() {
-  // 画面の上に表示するバー
-  final bar = AppBar(title: const Text('ツイート'));
-
   // ツイートのリスト
   final list = ListView.builder(
     itemCount: models.length,
     itemBuilder: (c, i) => modelToWidget(models[i]),
   );
 
+  final con = Center(
+    child: SizedBox(
+      height: 400,
+      child: list,
+    ),
+  );
+
   // 画面
-  final sca = Scaffold(appBar: bar, body: list);
+  final sca = Scaffold(
+    backgroundColor: Colors.grey,
+    body: con,
+  );
+
   // アプリ
   final app = MaterialApp(home: sca);
   // アプリを動かす
