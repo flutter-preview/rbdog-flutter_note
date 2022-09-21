@@ -2,39 +2,40 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 //
-// 画面 A
+// 画面 C
 //
-class PageA extends StatelessWidget {
-  const PageA({Key? key}) : super(key: key);
+class PageC extends StatelessWidget {
+  const PageC({Key? key}) : super(key: key);
 
-  // 進むボタンを押したとき
-  push(BuildContext context) {
-    // 画面 B へ進む
-    context.push('/b');
+  // 戻るボタンを押したとき
+  back(BuildContext context) {
+    // 前の画面 へ戻る
+    context.go('/a');
   }
 
   @override
   Widget build(BuildContext context) {
     // 画面の上に表示するバー
     final appBar = AppBar(
-      backgroundColor: Colors.red,
-      title: const Text('画面 A'),
+      backgroundColor: Colors.blue,
+      title: const Text('画面C'),
     );
 
-    // 進むボタン
-    final pushButton = ElevatedButton(
-      onPressed: () => push(context),
+    // 戻るボタン
+    final backButton = ElevatedButton(
+      onPressed: () => back(context),
       style: ElevatedButton.styleFrom(primary: Colors.green),
-      child: const Text('進む >'),
+      child: const Text('< 戻る'),
     );
 
+    // 画面全体
     return Scaffold(
       appBar: appBar,
       body: Center(
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            pushButton,
+            backButton,
           ],
         ),
       ),

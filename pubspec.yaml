@@ -10,13 +10,13 @@ scripts:
   doc: dart scripts/doc.dart
 
 dependencies:
+  go_router:
   flutter_riverpod:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.2
   pixel_color_image:
   web_socket_channel:
-  go_router:
 
 dev_dependencies:
   flutter_test:
