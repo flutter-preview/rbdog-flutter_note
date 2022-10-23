@@ -1,44 +1,34 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_sample/page_a.dart';
-import 'package:flutter_sample/page_b.dart';
-import 'package:flutter_sample/page_c.dart';
-import 'package:go_router/go_router.dart';
+import 'package:flutter_sample/side_menu.dart';
 
 main() {
-  final app = App();
-  runApp(app);
-}
-
-// アプリ全体
-class App extends StatelessWidget {
-  App({Key? key}) : super(key: key);
-
-  final router = GoRouter(
-    // パス (アプリが起動したとき)
-    initialLocation: '/a',
-    // パスと画面の組み合わせ
-    routes: [
-      GoRoute(
-        path: '/a',
-        builder: (context, state) => PageA(),
-      ),
-      GoRoute(
-        path: '/b',
-        builder: (context, state) => PageB(),
-      ),
-      GoRoute(
-        path: '/c',
-        builder: (context, state) => PageC(),
-      ),
-    ],
+  // アップバー
+  final appBar = AppBar(
+    title: const Text('appBar'),
   );
 
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp.router(
-      routeInformationProvider: router.routeInformationProvider,
-      routeInformationParser: router.routeInformationParser,
-      routerDelegate: router.routerDelegate,
-    );
-  }
+  // ドロワー
+  const drawer = Drawer(
+    child: SideMenu(),
+  );
+
+  // エンドドロワー
+  const endDrawer = Drawer(
+    child: SideMenu(),
+  );
+
+  // 画面
+  final scaffold = Scaffold(
+    appBar: appBar,
+    drawer: drawer,
+    endDrawer: endDrawer,
+  );
+
+  // アプリ
+  final app = MaterialApp(
+    debugShowCheckedModeBanner: false,
+    home: scaffold,
+  );
+
+  runApp(app);
 }
