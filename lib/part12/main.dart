@@ -32,7 +32,7 @@ main() {
 
   // 画面
   final scaffold = Scaffold(
-    // appBar: appBar, // アップバー
+    appBar: appBar, // アップバー
     drawer: drawer, // ドロワー
     endDrawer: endDrawer, // エンドドロワー
     floatingActionButton: fab, // フローティングアクションボタン (FAB)
