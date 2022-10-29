@@ -6,7 +6,7 @@ import 'package:flutter_sample/part13/page_c.dart';
 
 main() {
   // アプリ
-  const app = MaterialApp(home: HomePage());
+  const app = MaterialApp(home: Root());
 
   // プロバイダースコープでアプリを囲む
   const scope = ProviderScope(child: app);
@@ -19,9 +19,9 @@ final indexProvider = StateProvider((ref) {
   return 0;
 });
 
-// ホーム画面
-class HomePage extends ConsumerWidget {
-  const HomePage({super.key});
+// 画面全体
+class Root extends ConsumerWidget {
+  const Root({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -29,7 +29,7 @@ class HomePage extends ConsumerWidget {
     final index = ref.watch(indexProvider);
 
     // アイテムたち
-    const barItems = [
+    const items = [
       BottomNavigationBarItem(
         icon: Icon(Icons.person),
         label: 'アイテムA',
@@ -46,13 +46,13 @@ class HomePage extends ConsumerWidget {
 
     // 下のバー
     final bar = BottomNavigationBar(
-      items: barItems, // アイテムたち
+      items: items, // アイテムたち
       backgroundColor: Colors.red, // バーの色
       selectedItemColor: Colors.white, // 選ばれたアイテムの色
       unselectedItemColor: Colors.black, // 選ばれていないアイテムの色
       currentIndex: index, // インデックス
       onTap: (index) {
-        // アイテムをタップされたとき インデックスを変更する
+        // タップされたとき インデックスを変更する
         ref.read(indexProvider.notifier).state = index;
       },
     );
