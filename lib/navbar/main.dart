@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
     1. まずは nabvar.dart を作ります
 
       こちらからコピペできます
-      https://
+      https://github.com/rbdog/flutter_note/blob/main/lib/navbar/navbar.dart
 */
 
 //
