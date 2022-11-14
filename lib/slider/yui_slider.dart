@@ -26,24 +26,27 @@ class YuiSlider extends StatefulWidget {
     required List<Widget> labels,
     double thumbSize = 20,
     Color thumbColor = bananaYellow,
-    Color axisColor = bananaYellow,
+    double axisWidth = 5,
+    Color? axisColor,
+    Color axisFillColor = bananaYellow,
     ValueChanged<double>? onValueUpdate,
     bool rounded = true,
     ValueChanged<int>? onRounded,
   }) {
+    final _axisColor = axisColor ?? axisFillColor
+      ..withOpacity(0.3);
     return YuiSlider(
-      axis: Container(
-        color: axisColor.withOpacity(0.3),
-      ),
+      axisHeight: axisWidth,
+      axis: Container(color: _axisColor),
       axisFill: Container(
-        color: axisColor,
+        color: axisFillColor,
       ),
       tickCount: labels.length,
       tickBuilder: (index, isReached) {
         return Container(
           width: 2,
           height: 10,
-          color: isReached ? axisColor : axisColor.withOpacity(0.3),
+          color: isReached ? axisFillColor : _axisColor,
         );
       },
       labelBuilder: (index, isReached) {
@@ -328,11 +331,16 @@ void main() {
       Text('5'),
       Text('6'),
       Text('7'),
+      Text('8'),
+      Text('9'),
+      Text('10'),
     ],
   );
   final app = MaterialApp(
     home: Scaffold(
-      body: widget,
+      body: Center(
+        child: widget,
+      ),
     ),
   );
   runApp(app);
