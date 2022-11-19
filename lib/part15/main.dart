@@ -15,7 +15,7 @@ final radioIdProvider = StateProvider<String?>((ref) {
 
 // 選ばれたチェックボックスIDたち
 final checkedIdsProvider = StateProvider<Set<String>>((ref) {
-  // 最初はどのチェックボックスも選ばれていないので 空っぽ {}
+  // 最初は空っぽ {}
   return {};
 });
 
