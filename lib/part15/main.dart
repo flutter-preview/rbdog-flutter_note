@@ -2,38 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 void main() {
-  final app = MaterialApp(home: Home());
-  final scope = ProviderScope(child: app);
+  const app = MaterialApp(home: Home());
+  const scope = ProviderScope(child: app);
   runApp(scope);
 }
 
-// ID付きのアイテム
-class IdItem {
-  IdItem({
-    required this.id,
-    required this.text,
-  });
-  final String id;
-  final String text;
-}
-
-final radioItems = [
-  IdItem(id: 'A', text: 'ラジオボタンA'),
-  IdItem(id: 'B', text: 'ラジオボタンB'),
-  IdItem(id: 'C', text: 'ラジオボタンC'),
-];
-
-final checkboxItems = [
-  IdItem(id: 'A', text: 'チェックボックスA'),
-  IdItem(id: 'B', text: 'チェックボックスB'),
-  IdItem(id: 'C', text: 'チェックボックスC'),
-];
-
+// 選ばれたラジオボタンID
 final radioIdProvider = StateProvider<String?>((ref) {
+  // 最初はどれも選ばれていないので null
   return null;
 });
 
+// 選ばれたチェックボックスIDたち
 final checkedIdsProvider = StateProvider<Set<String>>((ref) {
+  // 最初はどのチェックボックスも選ばれていないので 空っぽ {}
   return {};
 });
 
@@ -42,48 +24,80 @@ class Home extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    // ラジオボタンID に合わせて画面を変化
     final radioId = ref.watch(radioIdProvider);
+    // チェックボックスIDたち に合わせて画面を変化
     final checkedIds = ref.watch(checkedIdsProvider);
 
+    // ラジオボタンが押されたときの関数
+    void onChangedRadio(String? id) {
+      ref.read(radioIdProvider.notifier).state = id!;
+    }
+
+    // チェックボックスが押された時の関数
+    void onChangedCheckbox(String id) {
+      final newSet = Set.of(checkedIds);
+      if (checkedIds.contains(id)) {
+        newSet.remove(id);
+      } else {
+        newSet.add(id);
+      }
+      ref.read(checkedIdsProvider.notifier).state = newSet;
+    }
+
+    // 縦に並べる
     final col = Column(
       children: [
-        ...List<Widget>.generate(
-          radioItems.length,
-          (index) {
-            final item = radioItems[index];
-            return RadioListTile(
-              groupValue: radioId,
-              onChanged: (id) {
-                final notifier = ref.read(radioIdProvider.notifier);
-                notifier.state = id.toString();
-              },
-              value: item.id,
-              title: Text(item.text),
-            );
-          },
+        // ラジオボタンたち
+
+        RadioListTile<String>(
+          groupValue: radioId,
+          onChanged: onChangedRadio,
+          value: 'A',
+          title: const Text('ラジオボタンA'),
         ),
-        ...List<Widget>.generate(
-          checkboxItems.length,
-          (index) {
-            final item = checkboxItems[index];
-            return CheckboxListTile(
-              title: Text(item.text),
-              value: checkedIds.contains(item.id),
-              onChanged: (checked) {
-                if (checked!) {
-                  checkedIds.add(item.id);
-                } else {
-                  checkedIds.remove(item.id);
-                }
-                final notifier = ref.read(checkedIdsProvider.notifier);
-                notifier.state = {...checkedIds};
-              },
-            );
-          },
+
+        RadioListTile<String>(
+          groupValue: radioId,
+          onChanged: onChangedRadio,
+          value: 'B',
+          title: const Text('ラジオボタンB'),
         ),
+
+        RadioListTile<String>(
+          groupValue: radioId,
+          onChanged: onChangedRadio,
+          value: 'C',
+          title: const Text('ラジオボタンC'),
+        ),
+
+        // チェックボックス たち
+
+        CheckboxListTile(
+          onChanged: (check) => onChangedCheckbox('A'),
+          value: checkedIds.contains('A'),
+          title: const Text('チェックボックスA'),
+        ),
+
+        CheckboxListTile(
+          onChanged: (check) => onChangedCheckbox('B'),
+          value: checkedIds.contains('B'),
+          title: const Text('チェックボックスB'),
+        ),
+
+        CheckboxListTile(
+          onChanged: (check) => onChangedCheckbox('C'),
+          value: checkedIds.contains('C'),
+          title: const Text('チェックボックスC'),
+        ),
+
+        // OK ボタン
+
         ElevatedButton(
           onPressed: () {
+            // 選ばれたラジオボタンIDを確認する
             print(radioId);
+            // 選ばれたチェックボックスIDを確認する
             print(checkedIds);
           },
           child: const Text('OK'),
