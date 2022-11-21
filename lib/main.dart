@@ -7,6 +7,10 @@ void main() {
   runApp(scope);
 }
 
+
+
+
+
 // 選ばれたラジオボタンID
 final radioIdProvider = StateProvider<String?>((ref) {
   // 最初はどれも選ばれていないので null
@@ -15,8 +19,19 @@ final radioIdProvider = StateProvider<String?>((ref) {
 
 // 選ばれたチェックボックスIDたち
 final checkedIdsProvider = StateProvider<Set<String>>(
-  (ref) {},
+  (ref) {
+    return {};
+  },
 );
+
+
+
+
+
+
+
+
+
 
 class Home extends ConsumerWidget {
   const Home({super.key});

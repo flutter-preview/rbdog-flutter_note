@@ -63,6 +63,7 @@ class _NavRootViewState extends State<NavRootView>
     final pageView = PageView.builder(
       controller: controller,
       physics: const NeverScrollableScrollPhysics(),
+      itemCount: widget.navbar.items.length,
       itemBuilder: (context, index) {
         return widget.pageBuilder(index);
       },
