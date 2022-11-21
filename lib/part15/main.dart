@@ -50,21 +50,21 @@ class Home extends ConsumerWidget {
       children: [
         // ラジオボタンたち
 
-        RadioListTile<String>(
+        RadioListTile(
           groupValue: radioId,
           onChanged: onChangedRadio,
           value: 'A',
           title: const Text('ラジオボタンA'),
         ),
 
-        RadioListTile<String>(
+        RadioListTile(
           groupValue: radioId,
           onChanged: onChangedRadio,
           value: 'B',
           title: const Text('ラジオボタンB'),
         ),
 
-        RadioListTile<String>(
+        RadioListTile(
           groupValue: radioId,
           onChanged: onChangedRadio,
           value: 'C',
