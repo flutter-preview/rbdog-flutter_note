@@ -18,6 +18,7 @@ dependencies:
   pixel_color_image:
   web_socket_channel:
   liveroom:
+  percent_indicator:
 
 dev_dependencies:
   flutter_test:
