@@ -10,15 +10,15 @@ scripts:
   doc: dart scripts/doc.dart
 
 dependencies:
+  percent_indicator:
   go_router:
   flutter_riverpod:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.2
-  pixel_color_image:
+  pixel_color_image: 1.2.2
   web_socket_channel:
   liveroom:
-  percent_indicator:
 
 dev_dependencies:
   flutter_test:

@@ -23,7 +23,7 @@ class Home extends ConsumerWidget {
     // パーセント
     final percent = ref.watch(percentProvider);
 
-    // サーキュラー型のインジケーター
+    // 丸型のインジケーター
     final circular = CircularPercentIndicator(
       percent: percent,
       backgroundColor: Colors.yellow,
@@ -36,7 +36,7 @@ class Home extends ConsumerWidget {
       center: Text('${percent * 100}%'),
     );
 
-    // リニア型のインジケーター
+    // 棒型のインジケーター
     final linear = LinearPercentIndicator(
       percent: percent,
       backgroundColor: Colors.yellow,

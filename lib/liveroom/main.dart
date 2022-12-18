@@ -2,19 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:liveroom/liveroom.dart';
 
 void main() {
-  // アプリ全体の設定
+  // アプリ全体のデザイン設定
+  final theme = ThemeData(
+    textTheme: const TextTheme(
+      bodyText1: TextStyle(fontSize: 24.0),
+      bodyText2: TextStyle(fontSize: 24.0),
+      button: TextStyle(fontSize: 24.0),
+      subtitle1: TextStyle(fontSize: 24.0),
+      subtitle2: TextStyle(fontSize: 24.0),
+    ),
+  );
+
+  // アプリ本体
   final app = MaterialApp(
     debugShowCheckedModeBanner: false,
     home: const HomePage(),
-    theme: ThemeData(
-      textTheme: const TextTheme(
-        bodyText1: TextStyle(fontSize: 24.0),
-        bodyText2: TextStyle(fontSize: 24.0),
-        button: TextStyle(fontSize: 24.0),
-        subtitle1: TextStyle(fontSize: 24.0),
-        subtitle2: TextStyle(fontSize: 24.0),
-      ),
-    ),
+    theme: theme,
   );
   runApp(app);
 }
@@ -115,9 +118,10 @@ class MessagePageState extends State<MessagePage> {
       },
 
       //
-      // * 誰かがメッセージを送信したとき = onReceive
+      // * メッセージを受け取ったとき = onReceive
       //
       onReceive: (userId, message) {
+        // 画面に表示する
         addMessage(message);
       },
 
@@ -198,6 +202,29 @@ class MessagePageLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final textController = TextEditingController();
+
+    final exitButton = ElevatedButton(
+      onPressed: onTapExit,
+      child: const Text('ルーム退出'),
+    );
+
+    final inputForm = SizedBox(
+      width: 300,
+      height: 50,
+      child: TextField(
+        decoration: const InputDecoration(
+          fillColor: Colors.white,
+          filled: true,
+        ),
+        controller: textController,
+      ),
+    );
+
+    final sendButton = ElevatedButton(
+      onPressed: () => onTapSend(textController.text),
+      child: const Text('送信'),
+    );
+
     final topBar = Container(
       width: double.infinity,
       height: 100,
@@ -206,35 +233,7 @@ class MessagePageLayout extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           const SizedBox(width: 50, height: 50),
-          ElevatedButton(
-            onPressed: onTapExit,
-            child: const Text('ルーム退出'),
-          ),
-        ],
-      ),
-    );
-    final bottomBar = Container(
-      width: double.infinity,
-      height: 100,
-      color: Colors.grey[300],
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          SizedBox(
-            width: 300,
-            height: 50,
-            child: TextField(
-              decoration: const InputDecoration(
-                fillColor: Colors.white,
-                filled: true,
-              ),
-              controller: textController,
-            ),
-          ),
-          ElevatedButton(
-            onPressed: () => onTapSend(textController.text),
-            child: const Text('送信'),
-          ),
+          exitButton,
         ],
       ),
     );
@@ -243,6 +242,19 @@ class MessagePageLayout extends StatelessWidget {
       child: ListView.builder(
         itemBuilder: itemBuilder,
         itemCount: messages.length,
+      ),
+    );
+
+    final bottomBar = Container(
+      width: double.infinity,
+      height: 100,
+      color: Colors.grey[300],
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          inputForm,
+          sendButton,
+        ],
       ),
     );
 

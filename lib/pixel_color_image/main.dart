@@ -3,7 +3,7 @@ import 'package:pixel_color_image/pixel_color_image.dart';
 
 // マウスがホバリングしているとき
 void onHover(int x, int y, Color color) async {
-  debugPrint('ホバリング中 x: $x, y: $y, color: $color');
+  debugPrint('ホバー中 x: $x, y: $y, color: $color');
 }
 
 // タップされたとき
@@ -11,20 +11,63 @@ void onTap(int x, int y, Color color) async {
   debugPrint('タップされました x: $x, y: $y, color: $color');
 }
 
+// 表示する画像を加工したいとき
+Widget buildImage(BuildContext context, Image image) {
+  // 加工がいらないときは ここで return image;
+
+  // Stack を使って 画像を後ろに隠す
+  return Stack(
+    alignment: Alignment.center,
+    children: [
+      // 後ろに隠れる画像
+      image,
+      // 同じ大きさのWidgetを前におく
+      Positioned.fill(
+        child: ColoredBox(color: Colors.black), // 前に置きたい Widget
+      ),
+    ],
+  );
+}
+
+// プレビューと画像を繋ぐための ref
+final ref = PixelColorRef();
+
 // main
 void main() {
-  // 画像の Widget を作る
-  const img = PixelColor.assetImage(
-    path: 'images/banana.png',
+  // ピクセルカラー読み取りWidget
+  final img = PixelColor.assetImage(
+    ref: ref,
+    // 画像はここにあります
+    // assets/images フォルダへおいてください
+    // https://github.com/rbdog/flutter_note/blob/main/assets/images/banana.png
+    path: 'assets/images/banana.png',
     onHover: onHover,
     onTap: onTap,
+    buildImage: buildImage,
+  );
+
+  // カラープレビュー
+  final preview = PixelColorPreview(
+    ref: ref,
   );
 
   // アプリ
-  const app = MaterialApp(
+  final app = MaterialApp(
+    // 画面
     home: Scaffold(
+      backgroundColor: Colors.grey,
+      // 真ん中
       body: Center(
-        child: img, // アプリの中に表示する
+        // カラム
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            // カラープレビュー
+            preview,
+            // 画像
+            img,
+          ],
+        ),
       ),
     ),
   );
