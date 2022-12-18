@@ -19,6 +19,7 @@ dependencies:
   pixel_color_image: 1.2.2
   web_socket_channel:
   liveroom:
+  yuix:
 
 dev_dependencies:
   flutter_test:
