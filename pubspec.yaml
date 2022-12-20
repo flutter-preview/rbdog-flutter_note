@@ -10,6 +10,7 @@ scripts:
   doc: dart scripts/doc.dart
 
 dependencies:
+  liveroom:
   percent_indicator:
   go_router:
   flutter_riverpod:
@@ -18,7 +19,6 @@ dependencies:
   cupertino_icons: ^1.0.2
   pixel_color_image: 1.2.2
   web_socket_channel:
-  liveroom:
   yuix:
 
 dev_dependencies:
