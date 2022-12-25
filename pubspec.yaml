@@ -10,6 +10,7 @@ scripts:
   doc: dart scripts/doc.dart
 
 dependencies:
+  freezed_annotation:
   liveroom:
   percent_indicator:
   go_router:
@@ -22,6 +23,8 @@ dependencies:
   yuix:
 
 dev_dependencies:
+  freezed:
+  build_runner:
   flutter_test:
     sdk: flutter
   flutter_lints: ^1.0.0
