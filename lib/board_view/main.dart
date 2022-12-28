@@ -2,6 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_sample/board_view/board_view.dart';
 
+class MyColors {
+  static const white = Colors.white;
+  static final lightGrey = Colors.grey[500];
+}
+
 void main() {
   const home = Home();
   const app = MaterialApp(home: home);
