@@ -1,35 +1,43 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_sample/nintendo/colors.dart';
+import 'package:flutter_sample/nintendo/messages.dart';
 import 'package:flutter_sample/nintendo/my_page.dart';
+import 'package:flutter_sample/nintendo/sizes.dart';
 
 // 選択中のタブインデックス
-final indexProvider = StateProvider((ref) {
+final tabIndexProvider = StateProvider((ref) {
+  // 今回は コード例なのでいきなり Myページ を表示
+  // 0: 空ページ
+  // 1: 空ページ
+  // 2: Myページ
   return 2;
 });
 
 // ホーム画面全体
 class Home extends ConsumerWidget {
-  const Home({super.key});
+  const Home({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     // インデックス
-    final index = ref.watch(indexProvider);
+    final tabIndex = ref.watch(tabIndexProvider);
 
     // アイテムたち
     const items = [
       BottomNavigationBarItem(
         icon: Icon(Icons.tv_outlined),
-        label: 'ニュース',
+        label: Messages.news,
       ),
       BottomNavigationBarItem(
         icon: Icon(Icons.shopping_basket_outlined),
-        label: 'ストア',
+        label: Messages.store,
       ),
       BottomNavigationBarItem(
         icon: Icon(Icons.person_outline_rounded),
-        label: 'Myページ',
+        label: Messages.myPage,
       ),
     ];
 
@@ -39,19 +47,19 @@ class Home extends ConsumerWidget {
       backgroundColor: MyColors.white, // バーの色
       selectedItemColor: MyColors.red, // 選ばれたアイテムの色
       unselectedItemColor: MyColors.darkGrey, // 選ばれていないアイテムの色
-      currentIndex: index,
+      currentIndex: tabIndex,
       onTap: (index) {
         // タップされたとき インデックスを変更する
-        ref.read(indexProvider.notifier).state = index;
+        ref.read(tabIndexProvider.notifier).state = index;
       },
-      elevation: 0,
+      elevation: Sizes.zero,
     );
 
     // 画面たち
     const pages = [
-      Scaffold(),
-      Scaffold(),
-      MyPage(),
+      Scaffold(), // 空のページ
+      Scaffold(), // 空のページ
+      MyPage(), // 空のページ
     ];
 
     return ColoredBox(
@@ -59,7 +67,7 @@ class Home extends ConsumerWidget {
       child: SafeArea(
         child: Scaffold(
           backgroundColor: MyColors.lightGrey,
-          body: pages[index],
+          body: pages[tabIndex],
           bottomNavigationBar: bar,
         ),
       ),

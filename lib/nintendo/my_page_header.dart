@@ -1,19 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_sample/nintendo/button_holder.dart';
 import 'package:flutter_sample/nintendo/colors.dart';
+import 'package:flutter_sample/nintendo/fixtures.dart';
+import 'package:flutter_sample/nintendo/gap.dart';
+import 'package:flutter_sample/nintendo/sizes.dart';
 import 'package:flutter_sample/nintendo/text_styles.dart';
 
 class MyPageHeader extends StatelessWidget {
   const MyPageHeader({
     super.key,
     required this.onPressedSettingButton,
-    required this.userName,
-    required this.userIconUri,
   });
 
   final void Function() onPressedSettingButton;
-  final String userName;
-  final String userIconUri;
 
   @override
   Widget build(BuildContext context) {
@@ -23,11 +22,11 @@ class MyPageHeader extends StatelessWidget {
     );
 
     final userIcon = ClipOval(
-      child: Image.asset(userIconUri),
+      child: Image.asset(Fixtures.userIconUri),
     );
 
-    final userNameText = Text(
-      userName,
+    const userNameText = Text(
+      Fixtures.userName,
       textAlign: TextAlign.left,
       style: MyTextStyles.xlBold,
     );
@@ -38,21 +37,21 @@ class MyPageHeader extends StatelessWidget {
           onPressed: onPressedSettingButton,
           icon: const Icon(
             Icons.qr_code_rounded,
-            size: 18,
+            size: Sizes.p18,
           ),
         ),
         IconButton(
           onPressed: onPressedSettingButton,
           icon: const Icon(
             Icons.location_on_outlined,
-            size: 18,
+            size: Sizes.p18,
           ),
         ),
       ],
     );
 
     return Container(
-      padding: const EdgeInsets.all(20),
+      padding: const EdgeInsets.all(Sizes.p20),
       color: MyColors.white,
       child: Column(
         children: [
@@ -63,11 +62,11 @@ class MyPageHeader extends StatelessWidget {
             ],
           ),
           SizedBox(
-            height: 80,
+            height: Sizes.p80,
             child: Row(
               children: [
                 userIcon,
-                const SizedBox(width: 10), // gap
+                Gap.w10,
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -79,7 +78,7 @@ class MyPageHeader extends StatelessWidget {
                         ),
                       ),
                       SizedBox(
-                        height: 30,
+                        height: Sizes.p30,
                         child: userDeatilButtonHolder,
                       ),
                     ],

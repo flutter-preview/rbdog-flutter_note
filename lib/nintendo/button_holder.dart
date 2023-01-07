@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_sample/nintendo/colors.dart';
+import 'package:flutter_sample/nintendo/sizes.dart';
 
 /// ボタンを横に並べるホルダー
 class ButtonHolder extends StatelessWidget {
@@ -21,10 +22,10 @@ class ButtonHolder extends StatelessWidget {
       // 仕切り線
       childrenWithDividers.add(
         VerticalDivider(
-          thickness: 1,
-          width: 1,
-          indent: 5,
-          endIndent: 5,
+          thickness: Sizes.p1,
+          width: Sizes.p1,
+          indent: Sizes.p5,
+          endIndent: Sizes.p5,
           color: MyColors.darkGrey,
         ),
       );
@@ -33,10 +34,10 @@ class ButtonHolder extends StatelessWidget {
     childrenWithDividers.removeLast();
 
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 5),
+      padding: const EdgeInsets.symmetric(horizontal: Sizes.p5),
       decoration: BoxDecoration(
         color: MyColors.lightGrey,
-        borderRadius: BorderRadius.circular(100),
+        borderRadius: BorderRadius.circular(Sizes.large),
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,

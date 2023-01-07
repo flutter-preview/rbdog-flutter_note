@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_sample/nintendo/colors.dart';
+import 'package:flutter_sample/nintendo/images.dart';
+import 'package:flutter_sample/nintendo/messages.dart';
+import 'package:flutter_sample/nintendo/sizes.dart';
 import 'package:flutter_sample/nintendo/text_styles.dart';
 
 /// イベント参加の履歴 セクション
@@ -12,33 +15,36 @@ class CheckinHistorySection extends StatelessWidget {
   Widget build(BuildContext context) {
     return ClipRRect(
       borderRadius: const BorderRadius.all(
-        Radius.circular(20),
+        Radius.circular(Sizes.p20),
       ),
       child: Container(
         color: MyColors.white,
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Image.asset(
-              'assets/images/map.png',
-            ),
+            Image.asset(Images.map.path),
             Divider(
-              thickness: 1.5,
-              height: 1.5,
+              thickness: Sizes.p1point5,
+              height: Sizes.p1point5,
               color: MyColors.lightGrey,
             ),
             Container(
-              padding: const EdgeInsets.fromLTRB(20, 14, 20, 14),
+              padding: const EdgeInsets.fromLTRB(
+                Sizes.p20,
+                Sizes.p14,
+                Sizes.p20,
+                Sizes.p14,
+              ),
               child: Row(
                 children: [
                   const Text(
-                    'チェックインした記録',
+                    Messages.historiesOfcheckin,
                     style: MyTextStyles.mBold,
                   ),
                   const Spacer(),
                   Icon(
                     Icons.arrow_forward_ios_rounded,
-                    size: 14,
+                    size: Sizes.p14,
                     color: MyColors.darkGrey,
                   ),
                 ],

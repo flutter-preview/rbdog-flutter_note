@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_sample/nintendo/colors.dart';
+import 'package:flutter_sample/nintendo/gap.dart';
+import 'package:flutter_sample/nintendo/images.dart';
+import 'package:flutter_sample/nintendo/messages.dart';
 import 'package:flutter_sample/nintendo/text_styles.dart';
 
 /// イベント参加の履歴 1つ分
@@ -18,22 +21,20 @@ class CheckinHistoryItem extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: [
         const Text(
-          'チェックインしました',
+          Messages.checkedIn,
           style: MyTextStyles.xsGreen,
         ),
-        const SizedBox(
-          height: 14,
-        ),
+        Gap.h14,
         Expanded(
           child: Row(
             children: [
-              Image.asset('assets/images/event.png'),
+              Image.asset(Images.event.path),
               const Spacer(),
               const Icon(
                 Icons.check_circle,
                 color: MyColors.green,
               ),
-              const SizedBox(width: 5),
+              Gap.w5,
               Text(
                 eventTitle,
                 style: MyTextStyles.mBold,

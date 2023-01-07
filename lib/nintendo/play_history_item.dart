@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_sample/nintendo/gap.dart';
+import 'package:flutter_sample/nintendo/images.dart';
 import 'package:flutter_sample/nintendo/text_styles.dart';
 
 /// 遊んだゲームの履歴 1つ分
@@ -6,18 +8,18 @@ class PlayHistoryItem extends StatelessWidget {
   const PlayHistoryItem({
     super.key,
     required this.gameTitle,
+    required this.value,
   });
 
   final String gameTitle;
+  final String value;
 
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Image.asset('assets/images/animal-crossing.png'),
-        const SizedBox(
-          width: 10,
-        ),
+        Image.asset(Images.animalCrossing.path),
+        Gap.w10,
         Expanded(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -27,8 +29,8 @@ class PlayHistoryItem extends StatelessWidget {
                 style: MyTextStyles.sGrey,
               ),
               const Spacer(),
-              const Text(
-                '1時間0分',
+              Text(
+                value,
                 textAlign: TextAlign.right,
                 style: MyTextStyles.lBold,
               ),

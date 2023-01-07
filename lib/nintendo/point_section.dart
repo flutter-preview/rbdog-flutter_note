@@ -1,57 +1,55 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_sample/nintendo/colors.dart';
+import 'package:flutter_sample/nintendo/gap.dart';
+import 'package:flutter_sample/nintendo/images.dart';
+import 'package:flutter_sample/nintendo/messages.dart';
+import 'package:flutter_sample/nintendo/sizes.dart';
 import 'package:flutter_sample/nintendo/text_styles.dart';
 
 class PointSection extends StatelessWidget {
   const PointSection({
     super.key,
-    required this.silverPoint,
-    required this.goldPoint,
+    required this.silverPoints,
+    required this.goldPoints,
   });
 
-  final int silverPoint;
-  final int goldPoint;
+  final int silverPoints;
+  final int goldPoints;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(14),
+      padding: const EdgeInsets.all(Sizes.p14),
       decoration: BoxDecoration(
         color: MyColors.white,
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.circular(Sizes.p20),
       ),
       child: Row(
         children: [
           const Text(
-            'ポイント',
+            Messages.points,
             style: MyTextStyles.s,
           ),
           const Spacer(),
           SizedBox(
-            width: 20,
-            height: 20,
-            child: Image.asset('assets/images/silver-coin.png'),
+            width: Sizes.p20,
+            height: Sizes.p20,
+            child: Image.asset(Images.silverCoin.path),
           ),
-          const SizedBox(
-            width: 5,
-          ),
+          Gap.w5,
           Text(
-            '$silverPoint',
+            '$silverPoints',
             style: MyTextStyles.lBold,
           ),
-          const SizedBox(
-            width: 10,
-          ),
+          Gap.w10,
           SizedBox(
-            width: 20,
-            height: 20,
-            child: Image.asset('assets/images/gold-coin.png'),
+            width: Sizes.p20,
+            height: Sizes.p20,
+            child: Image.asset(Images.goldCoin.path),
           ),
-          const SizedBox(
-            width: 5,
-          ),
+          Gap.w5,
           Text(
-            '$goldPoint',
+            '$goldPoints',
             style: MyTextStyles.lBold,
           ),
         ],

@@ -1,81 +1,101 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_sample/nintendo/checkin_history_item.dart';
 import 'package:flutter_sample/nintendo/colors.dart';
+import 'package:flutter_sample/nintendo/gap.dart';
+import 'package:flutter_sample/nintendo/messages.dart';
 import 'package:flutter_sample/nintendo/play_history_item.dart';
+import 'package:flutter_sample/nintendo/sizes.dart';
 import 'package:flutter_sample/nintendo/text_styles.dart';
 
 class UserHistorySection extends StatelessWidget {
   const UserHistorySection({
     super.key,
+    required this.exampleGameTilte,
+    required this.examplePlayHistory,
+    required this.exampleEventTilte,
   });
+
+  final String exampleGameTilte;
+  final String examplePlayHistory;
+  final String exampleEventTilte;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
         color: MyColors.white,
-        borderRadius: BorderRadius.circular(16),
+        borderRadius: BorderRadius.circular(Sizes.p16),
       ),
       child: Column(
         children: [
           Container(
-            padding: const EdgeInsets.all(20),
+            padding: const EdgeInsets.all(Sizes.p20),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SizedBox(
-                  height: 30,
+                  height: Sizes.p30,
                   child: Row(
                     children: [
                       const Text(
-                        '最近のきろく',
+                        Messages.recentHistories,
                         style: MyTextStyles.mBold,
                       ),
                       const Spacer(),
                       Icon(
                         Icons.info_outline,
-                        size: 20,
+                        size: Sizes.p20,
                         color: MyColors.darkGrey,
                       ),
                     ],
                   ),
                 ),
-                const SizedBox(height: 5),
+                Gap.h5,
                 const Text(
-                  '今日',
+                  Messages.today,
                   style: MyTextStyles.lBold,
                 ),
-                const SizedBox(height: 10),
-                const SizedBox(
-                  height: 80,
-                  child: PlayHistoryItem(gameTitle: 'あつまれどうぶつの森'),
+                Gap.h10,
+                SizedBox(
+                  height: Sizes.p80,
+                  child: PlayHistoryItem(
+                    gameTitle: exampleGameTilte,
+                    value: examplePlayHistory,
+                  ),
                 ),
-                const SizedBox(height: 20),
-                const SizedBox(
-                  height: 80,
-                  child: CheckinHistoryItem(eventTitle: 'Nintendo TOKYO'),
+                Gap.h20,
+                SizedBox(
+                  height: Sizes.p80,
+                  child: CheckinHistoryItem(
+                    eventTitle: exampleEventTilte,
+                  ),
                 ),
               ],
             ),
           ),
           Divider(
-            thickness: 1.5,
-            height: 1.5,
+            thickness: Sizes.p1point5,
+            height: Sizes.p1point5,
             color: MyColors.lightGrey,
           ),
           Container(
-            padding: const EdgeInsets.fromLTRB(20, 14, 20, 14),
+            padding: const EdgeInsets.fromLTRB(
+              Sizes.p20,
+              Sizes.p14,
+              Sizes.p20,
+              Sizes.p14,
+            ),
             child: Row(
               children: [
                 const Spacer(),
                 Text(
-                  'もっとみる',
+                  Messages.seeMore,
                   style: MyTextStyles.mGrey,
                 ),
-                const SizedBox(width: 5),
+                Gap.w5,
                 Icon(
                   Icons.arrow_forward_ios_rounded,
-                  size: 14,
+                  size: Sizes.p14,
                   color: MyColors.darkGrey,
                 ),
               ],
