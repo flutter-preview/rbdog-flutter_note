@@ -10,6 +10,7 @@ scripts:
   doc: dart scripts/doc.dart
 
 dependencies:
+  json_annotation:
   freezed_annotation:
   liveroom:
   percent_indicator:
@@ -23,6 +24,7 @@ dependencies:
   yuix:
 
 dev_dependencies:
+  json_serializable:
   freezed:
   build_runner:
   flutter_test:
