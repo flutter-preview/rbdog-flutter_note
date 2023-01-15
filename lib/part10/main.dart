@@ -52,7 +52,7 @@ Widget modelToWidget(Tweet model) {
     // 画像を丸くする
     child: ClipRRect(
       borderRadius: BorderRadius.circular(30.0),
-      child: Image.asset('images/${model.iconUrl}'),
+      child: Image.asset('assets/images/${model.iconUrl}'),
     ),
   );
 
