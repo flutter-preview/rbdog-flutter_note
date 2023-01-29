@@ -3,6 +3,9 @@
     "prefix": "@freezed",
     "scope": "dart",
     "body": [
+      "import 'package:freezed_annotation/freezed_annotation.dart';",
+      "part '$TM_FILENAME_BASE.freezed.dart';",
+      "",
       "@freezed",
       "class $1 with _$$1 {",
       "  const factory $1({",
@@ -12,6 +15,29 @@
       "  }) = _$1;",
       "}"
     ]
+  },
+
+  "@freezed_json": {
+    "prefix": "@freezed_json",
+    "scope": "dart",
+    "body": [
+      "import 'package:freezed_annotation/freezed_annotation.dart';",
+      "part '$TM_FILENAME_BASE.freezed.dart';",
+      "part '$TM_FILENAME_BASE.g.dart';",
+      "",
+      "@freezed",
+      "class ${1:Xxx} with _$${1:Xxx} {",
+      "  const factory ${1:Xxx}({",
+      "",
+      "  }) = _${1:Xxx};",
+      "  factory ${1:Xxx}.fromJson(Map<String, dynamic> json) => _$${1:Xxx}FromJson(json);",
+      "}"
+    ]
+  },
+
+  "build_runner": {
+    "prefix": "build_runner",
+    "body": ["flutter pub run build_runner build --delete-conflicting-outputs"]
   },
 
   "state_provider": {

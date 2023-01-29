@@ -1,4 +1,3 @@
-// メイン関数
 import 'package:flutter/material.dart';
 
 /// メイン関数
