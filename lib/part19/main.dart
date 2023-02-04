@@ -1,23 +1,18 @@
-import 'dart:convert';
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter_sample/part19/vegetable.dart';
-import 'package:flutter_sample/part19/pack.dart';
-import 'package:flutter_sample/part19/recipe.dart';
+import 'package:flutter/material.dart'; // Flutterのコードを書く
+import 'dart:convert'; // これを書くとjsonDecodeが使える
+import 'package:flutter/services.dart'; // これを書くとStubが使える
+import 'package:flutter_sample/part19/vegetable.dart'; // 別のファイルに書いたベジタブルを使う
+import 'package:flutter_sample/part19/pack.dart'; // 別のファイルに書いた野菜パックを使う
+import 'package:flutter_sample/part19/recipe.dart'; //別のファイルに書いたレシピを使う
 
 /// メイン関数
 void main() {
   test1();
-  test2();
-  test3();
-  test4();
-  test5();
-  test6();
 }
 
-// JSONを受け取る練習 レベル1
+// レベル1 (JSONを受け取る)
 void test1() async {
-  // Stub を使えるようにする
+  // Stub を使う準備
   WidgetsFlutterBinding.ensureInitialized();
   // JSON <--- Stub
   final json = await rootBundle.loadString('stub/level1.json');
@@ -29,36 +24,8 @@ void test1() async {
   debugPrint('データの中身は $data');
 }
 
-// JSONを受け取る練習 レベル2
+// レベル1 (JSONを送る)
 void test2() async {
-  // Stub を使えるようにする
-  WidgetsFlutterBinding.ensureInitialized();
-  // JSON <--- Stub
-  final json = await rootBundle.loadString('stub/level2.json');
-  // JsonMap <--- JSON
-  final map = jsonDecode(json);
-  // 野菜パック <--- JsonMap
-  final data = Pack.fromJson(map);
-  // データの中身を確認する
-  debugPrint('データの中身は $data');
-}
-
-// JSONを受け取る練習 レベル3
-void test3() async {
-  // Stub を使えるようにする
-  WidgetsFlutterBinding.ensureInitialized();
-  // JSON <--- Stub
-  final json = await rootBundle.loadString('stub/level3.json');
-  // JsonMap <--- JSON
-  final map = jsonDecode(json);
-  // レシピのデータ <--- JsonMap
-  final data = Recipe.fromJson(map);
-  // データの中身を確認する
-  debugPrint('データの中身は $data');
-}
-
-// JSONを送る練習 レベル1
-void test4() async {
   // 野菜データを作る
   const data = Vegetable(
     name: 'キャベツ',
@@ -73,9 +40,23 @@ void test4() async {
   debugPrint('JSONの中身は $json');
 }
 
-// JSONを送る練習 レベル2
-void test5() async {
-  // 野菜パックの中身
+// レベル2 (JSONを受け取る)
+void test3() async {
+  // Stub を使う準備
+  WidgetsFlutterBinding.ensureInitialized();
+  // JSON <--- Stub
+  final json = await rootBundle.loadString('stub/level2.json');
+  // JsonMap <--- JSON
+  final map = jsonDecode(json);
+  // 野菜パック <--- JsonMap
+  final data = Pack.fromJson(map);
+  // データの中身を確認する
+  debugPrint('データの中身は $data');
+}
+
+// レベル2 (JSONを送る)
+void test4() async {
+  // 適当な野菜
   const content = Vegetable(
     name: 'アボガド',
     color: '濃いみどり',
@@ -95,9 +76,23 @@ void test5() async {
   debugPrint('JSONの中身は $json');
 }
 
-// JSONを送る練習 レベル3
+// レベル3 (JSONを受け取る)
+void test5() async {
+  // Stub を使う準備
+  WidgetsFlutterBinding.ensureInitialized();
+  // JSON <--- Stub
+  final json = await rootBundle.loadString('stub/level3.json');
+  // JsonMap <--- JSON
+  final map = jsonDecode(json);
+  // レシピのデータ <--- JsonMap
+  final data = Recipe.fromJson(map);
+  // データの中身を確認する
+  debugPrint('データの中身は $data');
+}
+
+// レベル3 (JSONを送る)
 void test6() async {
-  // レシピに使う野菜たち
+  // レシピに使う適当な野菜たち
   const vegetables = [
     Vegetable(
       name: 'しょうが',
@@ -136,6 +131,6 @@ void test6() async {
 *    の代わりに
 *    final json = const JsonEncoder.withIndent('  ').convert(map);
 *    を使うと、
-*    ログに出したときに見やすくなるよ!
+*    中身の確認のときに見やすくなるよ!
 *
 */
