@@ -10,6 +10,7 @@ scripts:
   doc: dart scripts/doc.dart
 
 dependencies:
+  flutter_slidable:
   freezed_annotation:
   liveroom:
   percent_indicator:
