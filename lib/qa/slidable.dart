@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+
+// pubspec.yaml に flutter_slidable を追加しておいてください
 import 'package:flutter_slidable/flutter_slidable.dart';
 
 void main() {
