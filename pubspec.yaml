@@ -10,6 +10,7 @@ scripts:
   doc: dart scripts/doc.dart
 
 dependencies:
+  google_fonts:
   flutter_slidable:
   freezed_annotation:
   liveroom:
@@ -33,4 +34,5 @@ dev_dependencies:
 flutter:
   assets:
     - assets/images/
+    - assets/google_fonts/
   uses-material-design: true
