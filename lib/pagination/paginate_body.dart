@@ -3,8 +3,8 @@
 //
 
 import 'package:flutter/material.dart';
-import 'package:flutter_sample/pagination/paginate_notifier.dart';
-import 'package:flutter_sample/pagination/row_info.dart';
+import 'package:flutter_note/pagination/paginate_notifier.dart';
+import 'package:flutter_note/pagination/row_info.dart';
 
 /// Paginate Body
 class PaginateBody<ItemType> extends StatelessWidget {

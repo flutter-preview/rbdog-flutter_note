@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_sample/board_view/board_view.dart';
+import 'package:flutter_note/board_view/board_view.dart';
 
 class MyColors {
   static const white = Colors.white;

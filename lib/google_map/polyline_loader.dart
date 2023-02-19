@@ -1,6 +1,6 @@
-import 'package:flutter_sample/google_map/latlng.dart';
-import 'package:flutter_sample/google_map/map_polyline.dart';
-import 'package:flutter_sample/google_map/polyline_decoder.dart';
+import 'package:flutter_note/google_map/latlng.dart';
+import 'package:flutter_note/google_map/map_polyline.dart';
+import 'package:flutter_note/google_map/polyline_decoder.dart';
 
 MapPolyline decodePolyline(
   String id,

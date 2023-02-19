@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_sample/nintendo/gap.dart';
-import 'package:flutter_sample/nintendo/images.dart';
-import 'package:flutter_sample/nintendo/text_styles.dart';
+import 'package:flutter_note/nintendo/gap.dart';
+import 'package:flutter_note/nintendo/images.dart';
+import 'package:flutter_note/nintendo/text_styles.dart';
 
 /// 遊んだゲームの履歴 1つ分
 class PlayHistoryItem extends StatelessWidget {

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_sample/part12/side_menu.dart';
+import 'package:flutter_note/part12/side_menu.dart';
 
 main() {
   // アップバー

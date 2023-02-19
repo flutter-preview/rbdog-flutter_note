@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_sample/nintendo/colors.dart';
-import 'package:flutter_sample/nintendo/sizes.dart';
+import 'package:flutter_note/nintendo/colors.dart';
+import 'package:flutter_note/nintendo/sizes.dart';
 
 /// ボタンを横に並べるホルダー
 class ButtonHolder extends StatelessWidget {

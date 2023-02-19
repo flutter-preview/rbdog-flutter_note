@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_sample/nintendo/home.dart';
+import 'package:flutter_note/nintendo/home.dart';
 
 void main() {
   // ホーム画面

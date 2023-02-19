@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_sample/part11/page_a.dart';
-import 'package:flutter_sample/part11/page_b.dart';
-import 'package:flutter_sample/part11/page_c.dart';
+import 'package:flutter_note/part11/page_a.dart';
+import 'package:flutter_note/part11/page_b.dart';
+import 'package:flutter_note/part11/page_c.dart';
 import 'package:go_router/go_router.dart';
 
 main() {

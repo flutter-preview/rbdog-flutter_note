@@ -17,7 +17,7 @@ import 'package:flutter/material.dart';
       下のコードは自分のアプリに合わせて変えてください
 */
 
-import 'package:flutter_sample/navbar/navbar.dart';
+import 'package:flutter_note/navbar/navbar.dart';
 
 //
 //
@@ -29,9 +29,9 @@ import 'package:flutter_sample/navbar/navbar.dart';
       下のコードは自分のアプリに合わせて変えてください
 */
 
-import 'package:flutter_sample/navbar/page_a.dart';
-import 'package:flutter_sample/navbar/page_b.dart';
-import 'package:flutter_sample/navbar/page_c.dart';
+import 'package:flutter_note/navbar/page_a.dart';
+import 'package:flutter_note/navbar/page_b.dart';
+import 'package:flutter_note/navbar/page_c.dart';
 
 //
 //

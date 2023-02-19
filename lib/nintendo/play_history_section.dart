@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_sample/nintendo/colors.dart';
-import 'package:flutter_sample/nintendo/images.dart';
-import 'package:flutter_sample/nintendo/messages.dart';
-import 'package:flutter_sample/nintendo/sizes.dart';
-import 'package:flutter_sample/nintendo/text_styles.dart';
+import 'package:flutter_note/nintendo/colors.dart';
+import 'package:flutter_note/nintendo/images.dart';
+import 'package:flutter_note/nintendo/messages.dart';
+import 'package:flutter_note/nintendo/sizes.dart';
+import 'package:flutter_note/nintendo/text_styles.dart';
 
 /// 遊んだゲームの履歴 セクション
 class PlayHistorySection extends StatelessWidget {

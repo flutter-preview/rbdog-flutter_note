@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_sample/nintendo/button_holder.dart';
-import 'package:flutter_sample/nintendo/colors.dart';
-import 'package:flutter_sample/nintendo/fixtures.dart';
-import 'package:flutter_sample/nintendo/gap.dart';
-import 'package:flutter_sample/nintendo/sizes.dart';
-import 'package:flutter_sample/nintendo/text_styles.dart';
+import 'package:flutter_note/nintendo/button_holder.dart';
+import 'package:flutter_note/nintendo/colors.dart';
+import 'package:flutter_note/nintendo/fixtures.dart';
+import 'package:flutter_note/nintendo/gap.dart';
+import 'package:flutter_note/nintendo/sizes.dart';
+import 'package:flutter_note/nintendo/text_styles.dart';
 
 class MyPageHeader extends StatelessWidget {
   const MyPageHeader({

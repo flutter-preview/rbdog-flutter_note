@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_sample/nintendo/colors.dart';
-import 'package:flutter_sample/nintendo/messages.dart';
-import 'package:flutter_sample/nintendo/my_page.dart';
-import 'package:flutter_sample/nintendo/sizes.dart';
+import 'package:flutter_note/nintendo/colors.dart';
+import 'package:flutter_note/nintendo/messages.dart';
+import 'package:flutter_note/nintendo/my_page.dart';
+import 'package:flutter_note/nintendo/sizes.dart';
 
 // 選択中のタブインデックス
 final tabIndexProvider = StateProvider((ref) {

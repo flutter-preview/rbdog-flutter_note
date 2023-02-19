@@ -1,4 +1,4 @@
-import 'package:flutter_sample/google_map/latlng.dart';
+import 'package:flutter_note/google_map/latlng.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'map_marker.freezed.dart';

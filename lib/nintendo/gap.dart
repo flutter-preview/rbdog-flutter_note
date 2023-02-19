@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_sample/nintendo/sizes.dart';
+import 'package:flutter_note/nintendo/sizes.dart';
 
 class Gap {
   static const w5 = SizedBox(width: Sizes.p5);

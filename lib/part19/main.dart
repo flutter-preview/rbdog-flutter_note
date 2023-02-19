@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart'; // Flutterのコードを書く
 import 'dart:convert'; // これを書くとjsonDecodeが使える
 import 'package:flutter/services.dart'; // これを書くとStubが使える
-import 'package:flutter_sample/part19/vegetable.dart'; // 別のファイルに書いたベジタブルを使う
-import 'package:flutter_sample/part19/pack.dart'; // 別のファイルに書いた野菜パックを使う
-import 'package:flutter_sample/part19/recipe.dart'; //別のファイルに書いたレシピを使う
+import 'package:flutter_note/part19/vegetable.dart'; // 別のファイルに書いたベジタブルを使う
+import 'package:flutter_note/part19/pack.dart'; // 別のファイルに書いた野菜パックを使う
+import 'package:flutter_note/part19/recipe.dart'; //別のファイルに書いたレシピを使う
 
 /// メイン関数
 void main() {

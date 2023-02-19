@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_sample/nintendo/my_page_body.dart';
-import 'package:flutter_sample/nintendo/my_page_header.dart';
+import 'package:flutter_note/nintendo/my_page_body.dart';
+import 'package:flutter_note/nintendo/my_page_header.dart';
 
 class MyPage extends StatelessWidget {
   const MyPage({
