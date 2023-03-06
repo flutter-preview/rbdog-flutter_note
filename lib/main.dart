@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
-import 'package:flutter/services.dart';
-import 'package:flutter/foundation.dart';
-
-/// メイン関数
 void main() {
-  LicenseRegistry.addLicense(() async* {
-    final license = await rootBundle.loadString(
-      'google_fonts/OFL.txt',
-    );
-    yield LicenseEntryWithLineBreaks(
-      ['google_fonts'],
-      license,
-    );
-  });
+  const flavor = String.fromEnvironment('flavor');
+
+  if (flavor == 'dev') {
+    // ここは dev のときだけ
+  }
+
+  if (flavor == 'stg') {
+    // ここは stg のときだけ
+    debugPrint('バナナだぁぁぁぁあああ');
+  }
+
+  if (flavor == 'prd') {
+    // ここは prd のときだけ
+  }
 
   const app = MyApp();
   runApp(app);
@@ -38,28 +38,9 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            Text(
-              'バナナ美味しい',
-              style: GoogleFonts.hachiMaruPop(
-                fontSize: 30,
-                fontWeight: FontWeight.w600,
-              ),
-            ),
-
-            // ボタン
-            ElevatedButton(
-              onPressed: () {
-                showLicensePage(context: context);
-              },
-              child: Text('ボタン'),
-            ),
-          ],
-        ),
+        child: Text('バナナ'),
       ),
     );
   }
