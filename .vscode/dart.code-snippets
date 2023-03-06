@@ -16,7 +16,6 @@
       "}"
     ]
   },
-
   "@freezed_json": {
     "prefix": "@freezed_json",
     "scope": "dart",
@@ -29,17 +28,19 @@
       "class ${1:Xxx} with _$${1:Xxx} {",
       "  const factory ${1:Xxx}({",
       "",
+      "    // required <Type> <field>,",
+      "",
       "  }) = _${1:Xxx};",
       "  factory ${1:Xxx}.fromJson(Map<String, dynamic> json) => _$${1:Xxx}FromJson(json);",
       "}"
     ]
   },
-
   "build_runner": {
     "prefix": "build_runner",
-    "body": ["flutter pub run build_runner build --delete-conflicting-outputs"]
+    "body": [
+      "flutter pub run build_runner build --delete-conflicting-outputs"
+    ]
   },
-
   "state_provider": {
     "prefix": "state_provider",
     "scope": "dart",
@@ -49,7 +50,6 @@
       "});"
     ]
   },
-
   "consumer": {
     "prefix": "consumer",
     "scope": "dart",
@@ -66,7 +66,6 @@
       "}"
     ]
   },
-
   "enum_codable": {
     "prefix": "enum_codable",
     "scope": "dart",
