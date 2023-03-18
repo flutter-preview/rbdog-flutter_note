@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 
-void main() {
+// Firebase を使う時に必要なコード
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
+
+void main() async {
+  // フレーバー
   const flavor = String.fromEnvironment('flavor');
 
   if (flavor == 'dev') {
@@ -9,7 +14,12 @@ void main() {
 
   if (flavor == 'stg') {
     // ここは stg のときだけ
-    debugPrint('バナナだぁぁぁぁあああ');
+
+    // Firebase を使う時に必要なコード
+    WidgetsFlutterBinding.ensureInitialized();
+    await Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform,
+    );
   }
 
   if (flavor == 'prd') {

@@ -54,6 +54,9 @@
     "prefix": "consumer",
     "scope": "dart",
     "body": [
+      "import 'package:flutter/material.dart';",
+      "import 'package:flutter_riverpod/flutter_riverpod.dart';",
+      "",
       "class $1 extends ConsumerWidget {",
       "  const $1({",
       "    super.key,",
