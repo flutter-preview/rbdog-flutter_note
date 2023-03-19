@@ -22,8 +22,9 @@ dependencies:
   pixel_color_image: 1.2.2
   web_socket_channel:
   yuix:
-  firebase_core: ^2.7.1
+  firebase_core:
   firebase_analytics:
+  device_preview:
 
 dev_dependencies:
   freezed:
