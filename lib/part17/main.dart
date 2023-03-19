@@ -110,7 +110,8 @@ class Home extends ConsumerWidget {
 
     // 入れ物ごと変えた 新しいABCリスト
     final newAbcList = abcList.copyWith(
-      abcList: abcList.abcList + ['D'],
+      // D を追加する
+      values: abcList.values + ['D'],
     );
 
     // 画面を変更する

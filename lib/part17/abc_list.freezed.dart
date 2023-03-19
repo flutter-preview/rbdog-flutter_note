@@ -16,7 +16,7 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$AbcList {
-  List<String> get abcList => throw _privateConstructorUsedError;
+  List<String> get values => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $AbcListCopyWith<AbcList> get copyWith => throw _privateConstructorUsedError;
@@ -27,7 +27,7 @@ abstract class $AbcListCopyWith<$Res> {
   factory $AbcListCopyWith(AbcList value, $Res Function(AbcList) then) =
       _$AbcListCopyWithImpl<$Res, AbcList>;
   @useResult
-  $Res call({List<String> abcList});
+  $Res call({List<String> values});
 }
 
 /// @nodoc
@@ -43,12 +43,12 @@ class _$AbcListCopyWithImpl<$Res, $Val extends AbcList>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? abcList = null,
+    Object? values = null,
   }) {
     return _then(_value.copyWith(
-      abcList: null == abcList
-          ? _value.abcList
-          : abcList // ignore: cast_nullable_to_non_nullable
+      values: null == values
+          ? _value.values
+          : values // ignore: cast_nullable_to_non_nullable
               as List<String>,
     ) as $Val);
   }
@@ -61,7 +61,7 @@ abstract class _$$_AbcListCopyWith<$Res> implements $AbcListCopyWith<$Res> {
       __$$_AbcListCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({List<String> abcList});
+  $Res call({List<String> values});
 }
 
 /// @nodoc
@@ -74,12 +74,12 @@ class __$$_AbcListCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? abcList = null,
+    Object? values = null,
   }) {
     return _then(_$_AbcList(
-      null == abcList
-          ? _value._abcList
-          : abcList // ignore: cast_nullable_to_non_nullable
+      null == values
+          ? _value._values
+          : values // ignore: cast_nullable_to_non_nullable
               as List<String>,
     ));
   }
@@ -88,19 +88,19 @@ class __$$_AbcListCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_AbcList implements _AbcList {
-  _$_AbcList(final List<String> abcList) : _abcList = abcList;
+  _$_AbcList(final List<String> values) : _values = values;
 
-  final List<String> _abcList;
+  final List<String> _values;
   @override
-  List<String> get abcList {
-    if (_abcList is EqualUnmodifiableListView) return _abcList;
+  List<String> get values {
+    if (_values is EqualUnmodifiableListView) return _values;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_abcList);
+    return EqualUnmodifiableListView(_values);
   }
 
   @override
   String toString() {
-    return 'AbcList(abcList: $abcList)';
+    return 'AbcList(values: $values)';
   }
 
   @override
@@ -108,12 +108,12 @@ class _$_AbcList implements _AbcList {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_AbcList &&
-            const DeepCollectionEquality().equals(other._abcList, _abcList));
+            const DeepCollectionEquality().equals(other._values, _values));
   }
 
   @override
   int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_abcList));
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_values));
 
   @JsonKey(ignore: true)
   @override
@@ -123,10 +123,10 @@ class _$_AbcList implements _AbcList {
 }
 
 abstract class _AbcList implements AbcList {
-  factory _AbcList(final List<String> abcList) = _$_AbcList;
+  factory _AbcList(final List<String> values) = _$_AbcList;
 
   @override
-  List<String> get abcList;
+  List<String> get values;
   @override
   @JsonKey(ignore: true)
   _$$_AbcListCopyWith<_$_AbcList> get copyWith =>

@@ -16,6 +16,6 @@ class TodoModel {
   final String memo;
 }
 
-// typedef を使えば List<Todo> と書く代わりに TodoList とかけるようになる
+// typedef を使えば List<TodoModel> と書く代わりに TodoList とかけるようになる
 // これで <> が少し減ってスッキリしたコードになる
 typedef TodoList = List<TodoModel>;

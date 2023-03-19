@@ -20,8 +20,9 @@ Pack _$PackFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Pack {
-  String get size => throw _privateConstructorUsedError;
-  int get price => throw _privateConstructorUsedError;
+// 大きさ
+  String get size => throw _privateConstructorUsedError; // 値段
+  int get price => throw _privateConstructorUsedError; // 中身の野菜
   Vegetable get content => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -131,10 +132,13 @@ class _$_Pack implements _Pack {
 
   factory _$_Pack.fromJson(Map<String, dynamic> json) => _$$_PackFromJson(json);
 
+// 大きさ
   @override
   final String size;
+// 値段
   @override
   final int price;
+// 中身の野菜
   @override
   final Vegetable content;
 
@@ -179,11 +183,11 @@ abstract class _Pack implements Pack {
 
   factory _Pack.fromJson(Map<String, dynamic> json) = _$_Pack.fromJson;
 
-  @override
+  @override // 大きさ
   String get size;
-  @override
+  @override // 値段
   int get price;
-  @override
+  @override // 中身の野菜
   Vegetable get content;
   @override
   @JsonKey(ignore: true)

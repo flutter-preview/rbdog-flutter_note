@@ -20,8 +20,9 @@ Recipe _$RecipeFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Recipe {
-  String get title => throw _privateConstructorUsedError;
-  int get calories => throw _privateConstructorUsedError;
+// タイトル
+  String get title => throw _privateConstructorUsedError; // カロリー
+  int get calories => throw _privateConstructorUsedError; // 必要な野菜たち
   List<Vegetable> get vegetables => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -123,11 +124,15 @@ class _$_Recipe implements _Recipe {
   factory _$_Recipe.fromJson(Map<String, dynamic> json) =>
       _$$_RecipeFromJson(json);
 
+// タイトル
   @override
   final String title;
+// カロリー
   @override
   final int calories;
+// 必要な野菜たち
   final List<Vegetable> _vegetables;
+// 必要な野菜たち
   @override
   List<Vegetable> get vegetables {
     if (_vegetables is EqualUnmodifiableListView) return _vegetables;
@@ -179,11 +184,11 @@ abstract class _Recipe implements Recipe {
 
   factory _Recipe.fromJson(Map<String, dynamic> json) = _$_Recipe.fromJson;
 
-  @override
+  @override // タイトル
   String get title;
-  @override
+  @override // カロリー
   int get calories;
-  @override
+  @override // 必要な野菜たち
   List<Vegetable> get vegetables;
   @override
   @JsonKey(ignore: true)

@@ -20,8 +20,9 @@ Vegetable _$VegetableFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Vegetable {
-  String get name => throw _privateConstructorUsedError;
-  String get color => throw _privateConstructorUsedError;
+// 名前
+  String get name => throw _privateConstructorUsedError; // 色
+  String get color => throw _privateConstructorUsedError; // 旬の季節
   String get season => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -123,10 +124,13 @@ class _$_Vegetable implements _Vegetable {
   factory _$_Vegetable.fromJson(Map<String, dynamic> json) =>
       _$$_VegetableFromJson(json);
 
+// 名前
   @override
   final String name;
+// 色
   @override
   final String color;
+// 旬の季節
   @override
   final String season;
 
@@ -172,11 +176,11 @@ abstract class _Vegetable implements Vegetable {
   factory _Vegetable.fromJson(Map<String, dynamic> json) =
       _$_Vegetable.fromJson;
 
-  @override
+  @override // 名前
   String get name;
-  @override
+  @override // 色
   String get color;
-  @override
+  @override // 旬の季節
   String get season;
   @override
   @JsonKey(ignore: true)
