@@ -1,5 +1,7 @@
-# Flutter 入門講座
+![header](https://github.com/rbdog/flutter_note/blob/main/static/flutter-note-header.png?raw=true)
 
-## 解説動画はこちらから!
+# フラッター入門講座
+
+## 解説動画はこちら!
 
 https://www.youtube.com/playlist?list=PLY1cxwSQf6nz6zo2Y_UJlDjGOpASAO4hd
