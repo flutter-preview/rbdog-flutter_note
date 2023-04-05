@@ -1,5 +1,5 @@
 name: flutter_note
-description: Fluuterの勉強に使うサンプルコードです
+description: Flutterの勉強に使うサンプルコードです
 publish_to: "none"
 version: 1.0.0+1
 
@@ -10,15 +10,18 @@ scripts:
   doc: dart scripts/doc.dart
 
 dependencies:
+  flutter:
+    sdk: flutter
+  flutter_riverpod:
+  flutter_hooks:
+  riverpod_annotation:
   google_fonts:
   flutter_slidable:
+  json_annotation:
   freezed_annotation:
   liveroom:
   percent_indicator:
   go_router:
-  flutter_riverpod:
-  flutter:
-    sdk: flutter
   pixel_color_image: 1.2.2
   web_socket_channel:
   yuix:
@@ -33,6 +36,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^1.0.0
+  riverpod_generator: 2.1.4
 
 flutter:
   assets:

@@ -1,3 +1,15 @@
+- お試し実行
+
+```sh
+. scripts/run_dev.sh
+```
+
+- コード生成
+
+```sh
+. scripts/build_runner.sh
+```
+
 # コメントチャートの書き方
 
 - ソースコード内にインラインで書ける
@@ -5,7 +17,7 @@
 ## 例
 
 ```
-// # NEW MyChart  
+// # NEW MyChart
 
 ...
 
@@ -63,15 +75,15 @@ Gをする --> Hをする
 
 ## フォーマット
 
-| **使用箇所**        | **フォーマット**          | **図**                           |
-| --------------- | ------------------- | ------------------------------- |
-| 新規チャート作成        | `NEW XXX`           | <img src="cc1.png" width="100"> |
-| スタート            | `XXX`               | <img src="cc2.png" width="100"> |
-| それ以降            | `--> XXX`           | <img src="cc3.png" width="100"> |
-| 分岐点             | `--> X?{XXX}`       | <img src="cc4.png" width="100"> |
-| 分岐内             | `X? -- Yes --> YYY` | <img src="cc5.png" width="100"> |
+| **使用箇所**                 | **フォーマット**    | **図**                          |
+| ---------------------------- | ------------------- | ------------------------------- |
+| 新規チャート作成             | `NEW XXX`           | <img src="cc1.png" width="100"> |
+| スタート                     | `XXX`               | <img src="cc2.png" width="100"> |
+| それ以降                     | `--> XXX`           | <img src="cc3.png" width="100"> |
+| 分岐点                       | `--> X?{XXX}`       | <img src="cc4.png" width="100"> |
+| 分岐内                       | `X? -- Yes --> YYY` | <img src="cc5.png" width="100"> |
 | 分岐終了直後(スタートと同じ) | `XXX`               | <img src="cc6.png" width="100"> |
-| 任意の矢印           | `XXX --> YYY`       | <img src="cc7.png" width="100"> |
+| 任意の矢印                   | `XXX --> YYY`       | <img src="cc7.png" width="100"> |
 
 <br>
 <br>
