@@ -9,6 +9,7 @@ class S2Notifier extends _$S2Notifier {
     return ['A', 'B', 'C', 'D'];
   }
 
+  // データを変更する関数
   void updateState() {
     // 変更前のデータ
     final oldState = state;

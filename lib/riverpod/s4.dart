@@ -21,11 +21,16 @@ class S4Notifier extends _$S4Notifier {
     return controller.stream;
   }
 
+  // データを変更する関数
   void updateState() async {
-    // 2秒まつ
-    const sec2 = Duration(seconds: 2);
-    await Future.delayed(sec2);
+    // 1秒まつ
+    const sec1 = Duration(seconds: 1);
+    await Future.delayed(sec1);
     // データを上書き
-    state = const AsyncValue.data('メッセージが2件届きました');
+    state = const AsyncValue.data('メッセージが55件届きました');
+    // 1秒まつ
+    await Future.delayed(sec1);
+    // データを上書き
+    state = const AsyncValue.data('メッセージが99件届きました');
   }
 }
