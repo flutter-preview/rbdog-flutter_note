@@ -24,7 +24,8 @@ dependencies:
   go_router:
   pixel_color_image: 1.2.2
   web_socket_channel:
-  yuix:
+  ui_router:
+    path: ./../../Doggle/ui_router
   firebase_core:
   firebase_analytics:
   device_preview:

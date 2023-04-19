@@ -49,14 +49,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.3.1"
-  asn1lib:
-    dependency: transitive
-    description:
-      name: asn1lib
-      sha256: ab96a1cb3beeccf8145c52e449233fe68364c9641623acd3adad66f8184f1039
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.4.0"
   async:
     dependency: transitive
     description:
@@ -193,14 +185,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.1.1"
-  cron:
-    dependency: transitive
-    description:
-      name: cron
-      sha256: d98aa8cdad0cccdb6b098e6a1fb89339c180d8a229145fa4cd8c6fc538f0e35f
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.5.1"
   crypto:
     dependency: transitive
     description:
@@ -209,14 +193,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.0.2"
-  crypto_keys:
-    dependency: transitive
-    description:
-      name: crypto_keys
-      sha256: acc19abf34623d990a0e8aec69463d74a824c31f137128f42e2810befc509ad0
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.3.0+1"
   custom_lint:
     dependency: transitive
     description:
@@ -493,14 +469,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.3"
-  jose:
-    dependency: transitive
-    description:
-      name: jose
-      sha256: "06d28181b3ca26ffb83bf943f62f29d6b1b55793c852a389d3a29e6a5f54d325"
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.3.3"
   js:
     dependency: transitive
     description:
@@ -693,14 +661,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.3"
-  pointycastle:
-    dependency: transitive
-    description:
-      name: pointycastle
-      sha256: db7306cf0249f838d1a24af52b5a5887c5bf7f31d8bb4e827d071dc0939ad346
-      url: "https://pub.dev"
-    source: hosted
-    version: "3.6.2"
   pool:
     dependency: transitive
     description:
@@ -741,14 +701,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.2.1"
-  quiver:
-    dependency: transitive
-    description:
-      name: quiver
-      sha256: "93982981971e812c94d4a6fa3a57b89f9ec12b38b6380cd3c1370c3b01e4580e"
-      url: "https://pub.dev"
-    source: hosted
-    version: "3.1.0"
   riverpod:
     dependency: transitive
     description:
@@ -970,6 +922,13 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.3.1"
+  ui_router:
+    dependency: "direct main"
+    description:
+      path: "../../Doggle/ui_router"
+      relative: true
+    source: path
+    version: "3.0.0"
   uuid:
     dependency: transitive
     description:
@@ -1010,14 +969,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.1.3"
-  x509:
-    dependency: transitive
-    description:
-      name: x509
-      sha256: d4dab1f888e9abe92d718d172c7500c165dc9104ad0a0da2b878b99f55a664b1
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.2.2"
   xdg_directories:
     dependency: transitive
     description:
@@ -1042,14 +993,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.1.1"
-  yuix:
-    dependency: "direct main"
-    description:
-      name: yuix
-      sha256: b0b101b1a856db2a09c0aebf50d4ce3594bf1a74de09e2170064620fef864aa3
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.2.3"
 sdks:
   dart: ">=2.19.0 <3.0.0"
   flutter: ">=3.0.0"

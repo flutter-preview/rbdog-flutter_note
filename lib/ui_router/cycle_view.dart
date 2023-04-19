@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class YuiWidget extends StatefulWidget {
-  const YuiWidget({
+class CycleView extends StatefulWidget {
+  const CycleView({
     super.key,
     required this.onAppeaer,
     required this.onDisappeaer,
@@ -17,10 +17,10 @@ class YuiWidget extends StatefulWidget {
   final Widget child;
 
   @override
-  State<YuiWidget> createState() => _YuiWidgetState();
+  State<CycleView> createState() => _CycleViewState();
 }
 
-class _YuiWidgetState extends State<YuiWidget> {
+class _CycleViewState extends State<CycleView> {
   @override
   void initState() {
     super.initState();
@@ -44,13 +44,13 @@ class _YuiWidgetState extends State<YuiWidget> {
 }
 
 extension AsYuiWidget on Widget {
-  YuiWidget yui({
+  CycleView yui({
     final void Function()? onAppeaer,
     final void Function()? onDisappeaer,
     final double? width,
     final double? height,
   }) {
-    return YuiWidget(
+    return CycleView(
       onAppeaer: onAppeaer,
       onDisappeaer: onDisappeaer,
       width: width,
