@@ -66,6 +66,7 @@ https://youtu.be/0HVru4WtdWo
 
 - build_ondispose/
   - main.dart
+  - state.dart
 
 ## keepAlive
 
@@ -84,38 +85,45 @@ https://youtu.be/0HVru4WtdWo
 - /basic_provider_proxy
   - main.dart
   - proxy.dart
+  - widget.dart
 
 ## BasicProvider - ロジック
 
 - /basic_provider_logic
   - main.dart
   - logic.dart
+  - state.dart
 
 ## BasicProvider - キャッシュ
 
 - /basic_provider_cache
   - main.dart
   - cache.dart
+  - state.dart
 
 ## ProviderFamily
 
 - /provider_family
   - main.dart
   - family.dart
+  - widget.dart
 
 ## ProviderScope
 
 - /provider_scope
   - main.dart
+  - state.dart
+  - widget.dart
 
 ## overrideWith
 
 - /override_with
   - state.dart
   - main.dart
+  - widget.dart
 
 <br/><br/>
 
 # 説明用アイコン
 
-ダウンロードは[こちら](https://)からどうぞ
+ダウンロードは[こちら](https://github.com/rbdog/design-icons/releases)からどうぞ
