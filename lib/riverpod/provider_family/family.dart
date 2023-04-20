@@ -2,6 +2,14 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 part 'family.g.dart';
 
 @riverpod
-String family(FamilyRef ref, {required String group}) {
-  return 'WIP';
+int family(FamilyRef ref, String id) {
+  if (id == '日本') {
+    return 3;
+  }
+
+  if (id == 'アメリカ') {
+    return 2;
+  }
+
+  return 0;
 }

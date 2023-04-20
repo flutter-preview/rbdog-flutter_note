@@ -6,19 +6,20 @@ part of 'state.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$testNotifierHash() => r'11ed7357e11e837ddec3df733c16754b0d81dc1e';
+String _$shikokuNotifierHash() => r'a66b2696dadca7d0a82afa5612db6f7b9a79b6a6';
 
-/// See also [TestNotifier].
-@ProviderFor(TestNotifier)
-final testNotifierProvider =
-    AutoDisposeNotifierProvider<TestNotifier, int>.internal(
-  TestNotifier.new,
-  name: r'testNotifierProvider',
-  debugGetCreateSourceHash:
-      const bool.fromEnvironment('dart.vm.product') ? null : _$testNotifierHash,
+/// See also [ShikokuNotifier].
+@ProviderFor(ShikokuNotifier)
+final shikokuNotifierProvider =
+    AutoDisposeNotifierProvider<ShikokuNotifier, Shikoku>.internal(
+  ShikokuNotifier.new,
+  name: r'shikokuNotifierProvider',
+  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+      ? null
+      : _$shikokuNotifierHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );
 
-typedef _$TestNotifier = AutoDisposeNotifier<int>;
+typedef _$ShikokuNotifier = AutoDisposeNotifier<Shikoku>;
 // ignore_for_file: unnecessary_raw_strings, subtype_of_sealed_class, invalid_use_of_internal_member, do_not_use_environment, prefer_const_constructors, public_member_api_docs, avoid_private_typedef_functions

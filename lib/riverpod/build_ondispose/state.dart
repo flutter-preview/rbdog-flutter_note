@@ -2,7 +2,7 @@ import 'package:flutter/widgets.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 part 'state.g.dart';
 
-@Riverpod(keepAlive: true)
+@riverpod
 class CountNotifier extends _$CountNotifier {
   @override
   int build() {

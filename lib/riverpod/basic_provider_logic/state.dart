@@ -1,22 +1,20 @@
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 part 'state.g.dart';
 
+// 年齢
+
 @riverpod
-class TestNotifier extends _$TestNotifier {
+class AgeNotifier extends _$AgeNotifier {
   @override
   int build() {
-    return 50;
+    // 0 歳からスタート
+    return 0;
   }
 
-  void plus() {
+  // データを変更する関数
+  void updateState() {
     final oldState = state;
     final newState = oldState + 1;
-    state = newState;
-  }
-
-  void minus() {
-    final oldState = state;
-    final newState = oldState - 1;
     state = newState;
   }
 }

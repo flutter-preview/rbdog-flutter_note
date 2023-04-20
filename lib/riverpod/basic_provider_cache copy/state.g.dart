@@ -6,19 +6,20 @@ part of 'state.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$testNotifierHash() => r'11ed7357e11e837ddec3df733c16754b0d81dc1e';
+String _$scoreNotifierHash() => r'2a3613fe7be14039a69511a8498d7fc36b674d17';
 
-/// See also [TestNotifier].
-@ProviderFor(TestNotifier)
-final testNotifierProvider =
-    AutoDisposeNotifierProvider<TestNotifier, int>.internal(
-  TestNotifier.new,
-  name: r'testNotifierProvider',
-  debugGetCreateSourceHash:
-      const bool.fromEnvironment('dart.vm.product') ? null : _$testNotifierHash,
+/// See also [ScoreNotifier].
+@ProviderFor(ScoreNotifier)
+final scoreNotifierProvider =
+    NotifierProvider<ScoreNotifier, List<int>>.internal(
+  ScoreNotifier.new,
+  name: r'scoreNotifierProvider',
+  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+      ? null
+      : _$scoreNotifierHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );
 
-typedef _$TestNotifier = AutoDisposeNotifier<int>;
+typedef _$ScoreNotifier = Notifier<List<int>>;
 // ignore_for_file: unnecessary_raw_strings, subtype_of_sealed_class, invalid_use_of_internal_member, do_not_use_environment, prefer_const_constructors, public_member_api_docs, avoid_private_typedef_functions

@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:flutter_note/riverpod/provider_scope/state.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_note/riverpod/provider_scope/state.dart';
 
 main() {
   const app = MyApp(
     pages: [
       // プロバイダースコープ
       ProviderScope(child: PageA()),
+
       // プロバイダースコープ
       ProviderScope(child: PageB()),
     ],
@@ -31,12 +32,10 @@ class MyApp extends HookWidget {
     // タブのアイテムたち
     const items = [
       BottomNavigationBarItem(
-        backgroundColor: Colors.blue,
         icon: Icon(Icons.circle),
         label: 'A',
       ),
       BottomNavigationBarItem(
-        backgroundColor: Colors.green,
         icon: Icon(Icons.circle),
         label: 'B',
       ),
@@ -45,7 +44,7 @@ class MyApp extends HookWidget {
     // タブバー
     final bar = BottomNavigationBar(
       items: items,
-      backgroundColor: Colors.blue,
+      backgroundColor: Colors.orange,
       selectedItemColor: Colors.black,
       unselectedItemColor: Colors.white,
       currentIndex: index.value,
@@ -54,7 +53,7 @@ class MyApp extends HookWidget {
 
     return MaterialApp(
       home: Scaffold(
-        // プロバイダースコープがWidgetTreeから消えないようにする
+        // プロバイダースコープがWidgetTreeから消えないようにするIndexedStack
         body: IndexedStack(
           index: index.value,
           children: pages,
@@ -72,19 +71,20 @@ class PageA extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     // watch
-    final count = ref.watch(countNotifierProvider);
+    final test = ref.watch(testNotifierProvider);
     // ボタン
     final button = FloatingActionButton(
+      backgroundColor: Colors.orange,
       onPressed: () {
-        ref.read(countNotifierProvider.notifier).updateState();
+        ref.read(testNotifierProvider.notifier).minus();
       },
-      child: const Icon(Icons.add),
+      child: const Icon(Icons.remove),
     );
     // 画面
     return Scaffold(
       floatingActionButton: button,
       body: Center(
-        child: Text('$count'),
+        child: Text('$test'),
       ),
     );
   }
@@ -97,11 +97,12 @@ class PageB extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     // watch
-    final count = ref.watch(countNotifierProvider);
+    final test = ref.watch(testNotifierProvider);
     // ボタン
     final button = FloatingActionButton(
+      backgroundColor: Colors.orange,
       onPressed: () {
-        ref.read(countNotifierProvider.notifier).updateState();
+        ref.read(testNotifierProvider.notifier).plus();
       },
       child: const Icon(Icons.add),
     );
@@ -109,7 +110,7 @@ class PageB extends ConsumerWidget {
     return Scaffold(
       floatingActionButton: button,
       body: Center(
-        child: Text('$count'),
+        child: Text('$test'),
       ),
     );
   }

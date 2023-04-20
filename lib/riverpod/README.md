@@ -1,16 +1,21 @@
-# 案内
+# 案内所
 
-ファイルを探すための目次です
+これはファイルを探すための目次です。Youtube 解説動画はこちらから!  
+https://youtu.be/0HVru4WtdWo
+
+<br/><br/>
 
 # **第 1 回** パッケージの選び方
 
 - pubspec_yaml.txt
-  - 必要なパッケージを準備
+  - 必要なパッケージ一覧
   - 実際には `pubspec.yaml` に書いてください
 - my_widget.dart
-  - 次回のために `ConsumerWidget` を 1 つ準備
+  - `ConsumerWidget` を 1 つ準備
 - main.dart
-  - アプリを `ProviderScope` で囲むところがポイント
+  - アプリを `ProviderScope` で囲む
+
+<br/><br/>
 
 # **第 2 回** 状態の準備
 
@@ -22,6 +27,8 @@
   - Future 系 `Future`
 - s4.dart
   - Stream `Stream`
+
+<br/><br/>
 
 # **第 3 回** 状態の使い方
 
@@ -40,6 +47,8 @@
   - 状態を watch
   - AsyncValue で 3 つに分岐
   - ノティファイアを read
+
+<br/><br/>
 
 # **第 4 回** 応用編
 
@@ -105,40 +114,8 @@
   - state.dart
   - main.dart
 
+<br/><br/>
+
 # 説明用アイコン
 
-ダウンロードはこちらからどうぞ
-
-| 名前.png                   | 画像 |
-| -------------------------- | ---- |
-| pkg-yellow                 | img  |
-| pkg-blue                   | img  |
-| widget-stless              | img  |
-| widget-stful               | img  |
-| widget-consumer            | img  |
-| widget-consumer-stful      | img  |
-| widget-hook-consumer       | img  |
-| widget-stful-hook-consumer | img  |
-| state                      | img  |
-| state-and-provider         | img  |
-| provider                   | img  |
-| notifier                   | img  |
-| notifier-dollar            | img  |
-| gen                        | img  |
-| ref                        |
-| ref-watch                  | img  |
-| ref-listen                 | img  |
-| ref-read                   | img  |
-| async-value                | img  |
-| async-value-loading        | img  |
-| async-value-error          | img  |
-| async-value-data           | img  |
-| state-select               | img  |
-| provider-keep-alive        | img  |
-| provider-basic             | img  |
-| provider-proxy             | img  |
-| provider-logic             | img  |
-| provider-cache             | img  |
-| provider-family            | img  |
-| provider-scope             | img  |
-| override-with              | img  |
+ダウンロードは[こちら](https://)からどうぞ

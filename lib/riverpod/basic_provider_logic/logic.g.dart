@@ -1,24 +1,23 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'state.dart';
+part of 'logic.dart';
 
 // **************************************************************************
 // RiverpodGenerator
 // **************************************************************************
 
-String _$testNotifierHash() => r'11ed7357e11e837ddec3df733c16754b0d81dc1e';
+String _$logicHash() => r'0e1e63667df130237bee82d55de9cc7f7b22f72c';
 
-/// See also [TestNotifier].
-@ProviderFor(TestNotifier)
-final testNotifierProvider =
-    AutoDisposeNotifierProvider<TestNotifier, int>.internal(
-  TestNotifier.new,
-  name: r'testNotifierProvider',
+/// See also [logic].
+@ProviderFor(logic)
+final logicProvider = AutoDisposeProvider<String>.internal(
+  logic,
+  name: r'logicProvider',
   debugGetCreateSourceHash:
-      const bool.fromEnvironment('dart.vm.product') ? null : _$testNotifierHash,
+      const bool.fromEnvironment('dart.vm.product') ? null : _$logicHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );
 
-typedef _$TestNotifier = AutoDisposeNotifier<int>;
+typedef LogicRef = AutoDisposeProviderRef<String>;
 // ignore_for_file: unnecessary_raw_strings, subtype_of_sealed_class, invalid_use_of_internal_member, do_not_use_environment, prefer_const_constructors, public_member_api_docs, avoid_private_typedef_functions

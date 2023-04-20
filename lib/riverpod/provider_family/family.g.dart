@@ -6,7 +6,7 @@ part of 'family.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$familyHash() => r'c1458a176f9ab222772a2c180a6f79c391004a53';
+String _$familyHash() => r'40f446e5eaa78897719573c5773d21a442ed50d3';
 
 /// Copied from Dart SDK
 class _SystemHash {
@@ -29,23 +29,23 @@ class _SystemHash {
   }
 }
 
-typedef FamilyRef = AutoDisposeProviderRef<String>;
+typedef FamilyRef = AutoDisposeProviderRef<int>;
 
 /// See also [family].
 @ProviderFor(family)
 const familyProvider = FamilyFamily();
 
 /// See also [family].
-class FamilyFamily extends Family<String> {
+class FamilyFamily extends Family<int> {
   /// See also [family].
   const FamilyFamily();
 
   /// See also [family].
-  FamilyProvider call({
-    required String group,
-  }) {
+  FamilyProvider call(
+    String id,
+  ) {
     return FamilyProvider(
-      group: group,
+      id,
     );
   }
 
@@ -54,7 +54,7 @@ class FamilyFamily extends Family<String> {
     covariant FamilyProvider provider,
   ) {
     return call(
-      group: provider.group,
+      provider.id,
     );
   }
 
@@ -74,14 +74,14 @@ class FamilyFamily extends Family<String> {
 }
 
 /// See also [family].
-class FamilyProvider extends AutoDisposeProvider<String> {
+class FamilyProvider extends AutoDisposeProvider<int> {
   /// See also [family].
-  FamilyProvider({
-    required this.group,
-  }) : super.internal(
+  FamilyProvider(
+    this.id,
+  ) : super.internal(
           (ref) => family(
             ref,
-            group: group,
+            id,
           ),
           from: familyProvider,
           name: r'familyProvider',
@@ -93,17 +93,17 @@ class FamilyProvider extends AutoDisposeProvider<String> {
           allTransitiveDependencies: FamilyFamily._allTransitiveDependencies,
         );
 
-  final String group;
+  final String id;
 
   @override
   bool operator ==(Object other) {
-    return other is FamilyProvider && other.group == group;
+    return other is FamilyProvider && other.id == id;
   }
 
   @override
   int get hashCode {
     var hash = _SystemHash.combine(0, runtimeType.hashCode);
-    hash = _SystemHash.combine(hash, group.hashCode);
+    hash = _SystemHash.combine(hash, id.hashCode);
 
     return _SystemHash.finish(hash);
   }
