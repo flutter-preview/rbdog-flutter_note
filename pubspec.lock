@@ -928,7 +928,7 @@ packages:
       path: "../../Doggle/ui_router"
       relative: true
     source: path
-    version: "3.0.0"
+    version: "3.2.0"
   uuid:
     dependency: transitive
     description:
