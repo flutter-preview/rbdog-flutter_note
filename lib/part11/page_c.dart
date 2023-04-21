@@ -24,7 +24,8 @@ class PageC extends StatelessWidget {
     // 戻るボタン
     final backButton = ElevatedButton(
       onPressed: () => back(context),
-      style: ElevatedButton.styleFrom(primary: Colors.green),
+      // MEMO: primary は古くなったので backgroundColor へ変更しました
+      style: ElevatedButton.styleFrom(backgroundColor: Colors.green),
       child: const Text('< 戻る'),
     );
 

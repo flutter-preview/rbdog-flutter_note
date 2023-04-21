@@ -78,7 +78,7 @@ class Home extends StatelessWidget {
               // 左アクション1
               SlidableAction(
                 onPressed: (context) {
-                  print('左アクション1 がタップされました');
+                  debugPrint('左アクション1 がタップされました');
                 },
                 backgroundColor: Colors.red,
                 label: '左アクション1',
@@ -86,7 +86,7 @@ class Home extends StatelessWidget {
               // 左アクション2
               SlidableAction(
                 onPressed: (context) {
-                  print('左アクション2 がタップされました');
+                  debugPrint('左アクション2 がタップされました');
                 },
                 backgroundColor: Colors.green,
                 label: '左アクション2',
@@ -101,7 +101,7 @@ class Home extends StatelessWidget {
               // ListTile や Button や GestureDetector を使ってタップできるようにする
               return ListTile(
                 onTap: () {
-                  print('本体がタップされました。左側をオープンします');
+                  debugPrint('本体がタップされました。左側をオープンします');
 
                   controller.openStartActionPane(); // この関数で左側をオープン
                   // controller.openEndActionPane(); // この関数で右側をオープン

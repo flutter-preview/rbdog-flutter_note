@@ -24,7 +24,8 @@ class PageA extends StatelessWidget {
     // 進むボタン
     final pushButton = ElevatedButton(
       onPressed: () => push(context),
-      style: ElevatedButton.styleFrom(primary: Colors.green),
+      // MEMO: primary は古くなったので backgroundColor へ変更しました
+      style: ElevatedButton.styleFrom(backgroundColor: Colors.green),
       child: const Text('進む >'),
     );
 

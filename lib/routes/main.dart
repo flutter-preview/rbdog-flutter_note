@@ -32,17 +32,17 @@ class Page1 extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.red,
-        title: Text('1'),
+        title: const Text('1'),
         actions: [
           IconButton(
-            icon: Icon(Icons.arrow_forward_ios),
+            icon: const Icon(Icons.arrow_forward_ios),
             onPressed: () {
               Navigator.of(context).pushNamed('/2');
             },
           ),
         ],
       ),
-      body: Center(),
+      body: const Center(),
     );
   }
 }
@@ -55,17 +55,17 @@ class Page2 extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.green,
-        title: Text('2'),
+        title: const Text('2'),
         actions: [
           IconButton(
-            icon: Icon(Icons.arrow_forward_ios),
+            icon: const Icon(Icons.arrow_forward_ios),
             onPressed: () {
               Navigator.of(context).pushNamed('/3');
             },
           ),
         ],
       ),
-      body: Center(),
+      body: const Center(),
     );
   }
 }
@@ -78,9 +78,9 @@ class Page3 extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blue,
-        title: Text('3'),
+        title: const Text('3'),
       ),
-      body: Center(),
+      body: const Center(),
     );
   }
 }

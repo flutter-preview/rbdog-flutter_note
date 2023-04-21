@@ -5,11 +5,11 @@ void main() {
   // アプリ全体のデザイン設定
   final theme = ThemeData(
     textTheme: const TextTheme(
-      bodyText1: TextStyle(fontSize: 24.0),
-      bodyText2: TextStyle(fontSize: 24.0),
-      button: TextStyle(fontSize: 24.0),
-      subtitle1: TextStyle(fontSize: 24.0),
-      subtitle2: TextStyle(fontSize: 24.0),
+      bodyLarge: TextStyle(fontSize: 24.0),
+      bodyMedium: TextStyle(fontSize: 24.0),
+      labelLarge: TextStyle(fontSize: 24.0),
+      titleMedium: TextStyle(fontSize: 24.0),
+      titleSmall: TextStyle(fontSize: 24.0),
     ),
   );
 

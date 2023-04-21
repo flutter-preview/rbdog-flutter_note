@@ -1,5 +1,7 @@
 import 'dart:io';
 
+import 'package:flutter/foundation.dart';
+
 Future<String> readFile(String path) async {
   String text = 'No Content';
   final File file = File(path);
@@ -104,5 +106,5 @@ test() {
   const right = '<start>';
   const left = '<end>';
   final mathes = hitBetween(withTags, right, left);
-  print(mathes);
+  debugPrint(mathes.toString());
 }

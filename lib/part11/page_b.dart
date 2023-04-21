@@ -30,14 +30,16 @@ class PageB extends StatelessWidget {
     // 進むボタン
     final goButton = ElevatedButton(
       onPressed: () => push(context),
-      style: ElevatedButton.styleFrom(primary: Colors.blue),
+      // MEMO: primary は古くなったので backgroundColor へ変更しました
+      style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
       child: const Text('進む >'),
     );
 
     // 戻るボタン
     final backButton = ElevatedButton(
       onPressed: () => back(context),
-      style: ElevatedButton.styleFrom(primary: Colors.red),
+      // MEMO: primary は古くなったので backgroundColor へ変更しました
+      style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
       child: const Text('< 戻る'),
     );
 

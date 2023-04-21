@@ -14,7 +14,7 @@ enum Number {
 
 main() {
   // enum <== int
-  final enumValue = Number.from(rawValue: 1);
+  // final enumValue = Number.from(rawValue: 1);
   // int <== enum
-  final intValue = Number.one.rawValue;
+  // final intValue = Number.one.rawValue;
 }

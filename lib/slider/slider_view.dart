@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 
 const bananaYellow = Color(0xfffbbc05);
 
-class YuiSlider extends StatefulWidget {
-  const YuiSlider({
+class SliderView extends StatefulWidget {
+  const SliderView({
     super.key,
     required this.axis,
     required this.axisFill,
@@ -22,7 +22,7 @@ class YuiSlider extends StatefulWidget {
     this.onRounded,
   });
 
-  factory YuiSlider.tickLabels({
+  factory SliderView.tickLabels({
     required List<Widget> labels,
     double thumbSize = 20,
     Color thumbColor = bananaYellow,
@@ -35,7 +35,7 @@ class YuiSlider extends StatefulWidget {
   }) {
     final _axisColor = axisColor ?? axisFillColor
       ..withOpacity(0.3);
-    return YuiSlider(
+    return SliderView(
       axisHeight: axisWidth,
       axis: Container(color: _axisColor),
       axisFill: Container(
@@ -78,12 +78,12 @@ class YuiSlider extends StatefulWidget {
   final Widget Function(int index, bool isReached) labelBuilder;
 
   @override
-  YuiSliderState createState() {
-    return YuiSliderState();
+  SliderViewState createState() {
+    return SliderViewState();
   }
 }
 
-class YuiSliderState extends State<YuiSlider> {
+class SliderViewState extends State<SliderView> {
   Widget get axis => widget.axis;
   Widget get axisFill => widget.axisFill;
   double get axisHeight => widget.axisHeight;
@@ -319,11 +319,11 @@ class ColoredCircle extends StatelessWidget {
 }
 
 void main() {
-  final widget = YuiSlider.tickLabels(
+  final widget = SliderView.tickLabels(
     onRounded: (index) {
       debugPrint(index.toString());
     },
-    labels: [
+    labels: const [
       Text('1'),
       Text('2'),
       Text('3'),

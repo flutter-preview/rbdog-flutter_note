@@ -5,6 +5,8 @@
 // - StateProvider を使う
 //
 
+// ignore_for_file: prefer_const_constructors, unused_local_variable, sized_box_for_whitespace
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 

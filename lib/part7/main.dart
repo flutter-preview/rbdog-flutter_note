@@ -13,7 +13,8 @@ void main() {
     onPressed: xxxx,
     child: Text('押してみて'),
     style: ElevatedButton.styleFrom(
-      primary: Colors.green,
+      // MEMO: primary は古くなったので backgroundColor へ変更しました
+      backgroundColor: Colors.green,
     ),
   );
 

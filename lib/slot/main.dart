@@ -67,7 +67,7 @@ class Reel {
   }
 
   void didStop() {
-    print('回転が止まりました。 at: $index');
+    debugPrint('回転が止まりました。 at: $index');
   }
 }
 
@@ -127,7 +127,7 @@ class Machine {
     reels.first.scrollController.jumpTo(500); // 時間をかけずに移動
     reels.first.scrollController.animateTo(
       100,
-      duration: Duration(seconds: 3),
+      duration: const Duration(seconds: 3),
       curve: Curves.linear,
     );
   }
@@ -155,7 +155,7 @@ main() {
       onPressed: () {
         machine.start();
       },
-      child: Text('push'),
+      child: const Text('push'),
     ),
   );
   final app = MaterialApp(home: sca);
