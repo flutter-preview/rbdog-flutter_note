@@ -113,7 +113,6 @@ https://youtu.be/0HVru4WtdWo
 - /provider_scope
   - main.dart
   - state.dart
-  - widget.dart
 
 ## overrideWith
 
