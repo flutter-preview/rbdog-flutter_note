@@ -1,11 +1,7 @@
 {
   "hosting": {
     "public": "public",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ],
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "headers": [
       {
         "source": "inu.jpeg",
@@ -17,5 +13,15 @@
         ]
       }
     ]
+  },
+  "emulators": {
+    "auth": {
+      "host": "localhost",
+      "port": "9099"
+    },
+    "hosting": {
+      "host": "localhost",
+      "port": "5004"
+    }
   }
 }

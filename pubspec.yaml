@@ -28,6 +28,8 @@ dependencies:
     path: ./../../Doggle/ui_router
   firebase_core:
   firebase_analytics:
+  firebase_auth:
+  google_sign_in:
   device_preview:
 
 dev_dependencies:
