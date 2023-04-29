@@ -43,5 +43,12 @@ class SignInUsecase {
     await FirebaseAuth.instance.signInWithCredential(
       oAuthCredential,
     );
+
+    /* Googleサインインを使わないときは これだけで十分 */
+
+    // await FirebaseAuth.instance.signInWithEmailAndPassword(
+    //   email: 'ここにメールアドレス',
+    //   password: 'ここにパスワード',
+    // );
   }
 }

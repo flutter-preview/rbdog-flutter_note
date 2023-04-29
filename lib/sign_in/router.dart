@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_note/sign_in/pages.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
-import 'package:flutter_note/sign_in/home_page.dart';
-import 'package:flutter_note/sign_in/sign_in_page.dart';
-import 'package:flutter_note/sign_in/splash_page.dart';
 import 'package:flutter_note/sign_in/state.dart';
 part 'router.g.dart';
 
@@ -69,11 +67,14 @@ GoRouter router(RouterRef ref) {
       routes: publicRoutes,
       // 公開ページはデータを上書き
       builder: (_, __, child) {
-        final user = ref.read(userNotifierProvider);
+        // Firebaseからユーザー情報を読み取る
+        final user = ref.read(firebaseUserNotifierProvider);
         return user.when(
+          // 準備中のとき グルグルを表示
           loading: () => const CircularProgressIndicator(),
+          // エラーのとき グルグルを表示
           error: (_, __) => const CircularProgressIndicator(),
-          // プロバイダースコープ
+          // データが揃ったとき プロバイダースコープ
           data: (data) => ProviderScope(
             overrides: [
               // ユーザーIDを上書き
@@ -88,18 +89,16 @@ GoRouter router(RouterRef ref) {
 
   // リダイレクト - 強制的に画面を変更する
   String? redirect(BuildContext context, GoRouterState state) {
-    // 開こうとしている画面
-    final page = state.location;
-
     // サインインしているかどうか (分からないときは false)
     final isSignedIn = ref.read(isSignedInProvider) ?? false;
 
     // 公開ページかどうか
+    final page = state.location;
     final publicPages = publicRoutes.map((route) => route.path);
-    final isPublicPage = publicPages.contains(page);
+    final isPublic = publicPages.contains(page);
 
     // サインインしていない && 公開ページではない
-    if (!isSignedIn && !isPublicPage) {
+    if (!isSignedIn && !isPublic) {
       debugPrint('サインイン画面へリダイレクトします');
       return Pages.signIn.path;
     }

@@ -6,9 +6,16 @@ part of 'state.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$isSignedInHash() => r'ba212a8252b4faae46e516658f94f35e4ddda3e2';
+String _$isSignedInHash() => r'41c1a5feec7a3b3b336cac8c3c235dee761c7236';
 
-/// See also [isSignedIn].
+///
+/// サインイン中かどうか
+///   - true: サインイン中
+///   - false: サインアウト中
+///   - null: 不明
+///
+///
+/// Copied from [isSignedIn].
 @ProviderFor(isSignedIn)
 final isSignedInProvider = AutoDisposeProvider<bool?>.internal(
   isSignedIn,
@@ -20,9 +27,13 @@ final isSignedInProvider = AutoDisposeProvider<bool?>.internal(
 );
 
 typedef IsSignedInRef = AutoDisposeProviderRef<bool?>;
-String _$userIdHash() => r'd879438e405303e0f22a6dbcb556c94729a0e007';
+String _$userIdHash() => r'bb453a6ce3b98cc3c904d9b028e30554b426ccd5';
 
-/// See also [userId].
+///
+/// ユーザーID
+///
+///
+/// Copied from [userId].
 @ProviderFor(userId)
 final userIdProvider = AutoDisposeProvider<String>.internal(
   userId,
@@ -34,19 +45,25 @@ final userIdProvider = AutoDisposeProvider<String>.internal(
 );
 
 typedef UserIdRef = AutoDisposeProviderRef<String>;
-String _$userNotifierHash() => r'c03feda8d6584cddde7b40f50e2cfaf5e84682b5';
+String _$firebaseUserNotifierHash() =>
+    r'bf3a0d9d05416db3fbaf1ace018fbbf3ad36d20c';
 
-/// See also [UserNotifier].
-@ProviderFor(UserNotifier)
-final userNotifierProvider =
-    AutoDisposeStreamNotifierProvider<UserNotifier, User?>.internal(
-  UserNotifier.new,
-  name: r'userNotifierProvider',
-  debugGetCreateSourceHash:
-      const bool.fromEnvironment('dart.vm.product') ? null : _$userNotifierHash,
+///
+/// Firebaseのユーザーを管理するノティファイヤー
+///
+///
+/// Copied from [FirebaseUserNotifier].
+@ProviderFor(FirebaseUserNotifier)
+final firebaseUserNotifierProvider =
+    AutoDisposeStreamNotifierProvider<FirebaseUserNotifier, User?>.internal(
+  FirebaseUserNotifier.new,
+  name: r'firebaseUserNotifierProvider',
+  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+      ? null
+      : _$firebaseUserNotifierHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );
 
-typedef _$UserNotifier = AutoDisposeStreamNotifier<User?>;
+typedef _$FirebaseUserNotifier = AutoDisposeStreamNotifier<User?>;
 // ignore_for_file: unnecessary_raw_strings, subtype_of_sealed_class, invalid_use_of_internal_member, do_not_use_environment, prefer_const_constructors, public_member_api_docs, avoid_private_typedef_functions

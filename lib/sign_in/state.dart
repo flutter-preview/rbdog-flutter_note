@@ -3,8 +3,11 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 part 'state.g.dart';
 
+///
+/// Firebaseのユーザーを管理するノティファイヤー
+///
 @riverpod
-class UserNotifier extends _$UserNotifier {
+class FirebaseUserNotifier extends _$FirebaseUserNotifier {
   @override
   Stream<User?> build() {
     // Firebaseからユーザーの変化を教えてもらう
@@ -20,7 +23,7 @@ class UserNotifier extends _$UserNotifier {
 ///
 @riverpod
 bool? isSignedIn(IsSignedInRef ref) {
-  final user = ref.watch(userNotifierProvider);
+  final user = ref.watch(firebaseUserNotifierProvider);
   return user.when(
     loading: () => null,
     error: (_, __) => null,
