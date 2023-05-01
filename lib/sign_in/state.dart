@@ -16,26 +16,23 @@ class FirebaseUserNotifier extends _$FirebaseUserNotifier {
 }
 
 ///
-/// サインイン中かどうか
-///   - true: サインイン中
-///   - false: サインアウト中
-///   - null: 不明
+/// ユーザー
 ///
 @riverpod
-bool? isSignedIn(IsSignedInRef ref) {
+User? user(UserRef ref) {
   final user = ref.watch(firebaseUserNotifierProvider);
   return user.when(
     loading: () => null,
     error: (_, __) => null,
-    data: (d) => d != null, // データがあったらtrue
+    data: (d) => d,
   );
 }
 
 ///
-/// ユーザーID
+/// サインイン中かどうか
 ///
 @riverpod
-String userId(UserIdRef ref) {
-  // MEMO: サインインしてから GoRouter の中で上書きする
-  throw Exception('サインインしないと使えません');
+bool isSignedIn(IsSignedInRef ref) {
+  final user = ref.watch(userProvider);
+  return user != null;
 }

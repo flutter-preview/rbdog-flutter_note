@@ -12,26 +12,8 @@ void main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
 
-  // 練習用の通信をする
-  // await FirebaseAuth.instance.useAuthEmulator('localhost', 9099);
-
+  // アプリを動かす
   const app = MyApp();
   const scope = ProviderScope(child: app);
   runApp(scope);
-}
-
-/// ---------------------------------------------------------
-/// アプリ本体    >> app.dart
-/// ---------------------------------------------------------
-class MyApp extends ConsumerWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final router = ref.watch(routerProvider);
-    return MaterialApp.router(
-      debugShowCheckedModeBanner: false,
-      routerConfig: router,
-    );
-  }
 }

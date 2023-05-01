@@ -1,9 +1,8 @@
-import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
-/// サインインの流れをまとめておくユースケース
-class SignInUsecase {
+/// サインインの流れをまとめておくクラス
+class SignInService {
   /// サインイン開始
   Future<void> start() async {
     /* Google OAuth と通信 */
@@ -28,18 +27,15 @@ class SignInUsecase {
 
     // アクセストークンが null だったら中止
     if (accessToken == null) {
-      debugPrint('サインインを中止しました');
       return;
     }
 
     /* Firebase と通信 */
 
-    // 必要な情報をまとめてクレデンシャルを作る
+    // Firebaseへアクセストークンを送る
     final oAuthCredential = GoogleAuthProvider.credential(
       accessToken: accessToken,
     );
-
-    // Firebaseへ送る
     await FirebaseAuth.instance.signInWithCredential(
       oAuthCredential,
     );

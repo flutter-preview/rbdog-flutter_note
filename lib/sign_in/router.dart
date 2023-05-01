@@ -6,103 +6,49 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:flutter_note/sign_in/state.dart';
 part 'router.g.dart';
 
-// ページ一覧
-enum Pages {
-  splash,
-  signIn,
-  home,
-}
-
-// ページごとのパス
-extension PagePath on Pages {
-  String get path {
-    switch (this) {
-      case Pages.splash:
-        return '/splash';
-      case Pages.signIn:
-        return '/sign-in';
-      case Pages.home:
-        return '/home';
-    }
-  }
-}
-
-// GoRouter
+/// ---------------------------------------------------------
+/// GoRouter    >> router/router.dart
+/// ---------------------------------------------------------
 @riverpod
 GoRouter router(RouterRef ref) {
   // アプリが始まった時のパス
-  final initialLocation = Pages.splash.path;
+  final initialLocation = Pages.signIn.path;
 
-  // 非公開ページ - サインインが必要
-  final privateRoutes = [
-    // ホーム画面
-    GoRoute(
-      path: Pages.home.path,
-      builder: (_, __) => const HomePage(),
-    ),
-  ];
-
-  // 公開ページ - 誰でも見れる
-  final publicRoutes = [
-    // スプラッシュ画面
-    GoRoute(
-      path: Pages.splash.path,
-      builder: (_, __) => const SplashPage(),
-    ),
+  // パスと画面の組み合わせ
+  final routes = [
     // サインイン画面
     GoRoute(
       path: Pages.signIn.path,
       builder: (_, __) => const SignInPage(),
     ),
-  ];
 
-  // 非公開ページ + 公開ページ
-  final allRoutes = [
-    // 非公開ページ
+    // サインインが必要なページをシェルで囲む
     ShellRoute(
-      routes: privateRoutes,
-    ),
-    // 公開ページ
-    ShellRoute(
-      routes: publicRoutes,
-      // 公開ページはデータを上書き
-      builder: (_, __, child) {
-        // Firebaseからユーザー情報を読み取る
-        final user = ref.read(firebaseUserNotifierProvider);
-        return user.when(
-          // 準備中のとき グルグルを表示
-          loading: () => const CircularProgressIndicator(),
-          // エラーのとき グルグルを表示
-          error: (_, __) => const CircularProgressIndicator(),
-          // データが揃ったとき プロバイダースコープ
-          data: (data) => ProviderScope(
-            overrides: [
-              // ユーザーIDを上書き
-              userIdProvider.overrideWithValue(data!.uid),
-            ],
-            child: child,
-          ),
-        );
-      },
+      builder: (_, __, child) => SignedInShell(child: child),
+      routes: [
+        // ホーム画面
+        GoRoute(
+          path: Pages.home.path,
+          builder: (_, __) => const HomePage(),
+        ),
+      ],
     ),
   ];
 
   // リダイレクト - 強制的に画面を変更する
   String? redirect(BuildContext context, GoRouterState state) {
-    // サインインしているかどうか (分からないときは false)
-    final isSignedIn = ref.read(isSignedInProvider) ?? false;
+    // サインインしているかどうか
+    final isSignedIn = ref.read(isSignedInProvider);
 
-    // 公開ページかどうか
-    final page = state.location;
-    final publicPages = publicRoutes.map((route) => route.path);
-    final isPublic = publicPages.contains(page);
-
-    // サインインしていない && 公開ページではない
-    if (!isSignedIn && !isPublic) {
-      debugPrint('サインイン画面へリダイレクトします');
+    if (isSignedIn && state.location == Pages.signIn.path) {
+      // Yes && サインイン画面にいる --> ホーム画面へ
+      return Pages.home.path;
+    } else if (!isSignedIn) {
+      // No --> サインイン画面へ
       return Pages.signIn.path;
+    } else {
+      return null;
     }
-    return null;
   }
 
   // Riverpod と GoRouter を連動させるコード
@@ -116,8 +62,64 @@ GoRouter router(RouterRef ref) {
   // GoRouterを作成
   return GoRouter(
     initialLocation: initialLocation,
-    routes: allRoutes,
+    routes: routes,
     redirect: redirect,
     refreshListenable: listenable,
   );
+}
+
+/// ---------------------------------------------------------
+/// サインインが必要なページを囲むシェル    >> router/signed_in_shell.dart
+/// ---------------------------------------------------------
+
+/// サインイン中しか使えないユーザーID
+@riverpod
+String userId(UserIdRef ref) {
+  throw 'シェルで囲まれた画面でないと使えません';
+}
+
+/// サインインが必要なページを囲むシェル
+class SignedInShell extends ConsumerWidget {
+  const SignedInShell({
+    super.key,
+    required this.child,
+  });
+
+  final Widget child;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    /// サインインしているユーザーの情報
+    final user = ref.watch(firebaseUserNotifierProvider);
+    final userId = user.value?.uid;
+    if (userId == null) {
+      // ユーザーIDがないとき
+      return const CircularProgressIndicator();
+    } else {
+      // ユーザーIDがあるとき
+      return ProviderScope(
+        // ユーザーIDを上書き
+        overrides: [
+          userIdProvider.overrideWithValue(userId),
+        ],
+        child: child,
+      );
+    }
+  }
+}
+
+/// ---------------------------------------------------------
+/// アプリ本体    >> router/app.dart
+/// ---------------------------------------------------------
+class MyApp extends ConsumerWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final router = ref.watch(routerProvider);
+    return MaterialApp.router(
+      debugShowCheckedModeBanner: false,
+      routerConfig: router,
+    );
+  }
 }
