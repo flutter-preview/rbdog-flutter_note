@@ -6,7 +6,7 @@ part of 'state.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$userHash() => r'3815939be9d053500acaa437c0f23d0d03392781';
+String _$userHash() => r'2cf254520bccdca1749af1634de7c92e9ea344a4';
 
 ///
 /// ユーザー
@@ -24,24 +24,42 @@ final userProvider = AutoDisposeProvider<User?>.internal(
 );
 
 typedef UserRef = AutoDisposeProviderRef<User?>;
-String _$isSignedInHash() => r'49bf32b5bbaa2d237e6c626128fe5eb51d8d8954';
+String _$signedInHash() => r'ad977544c865550a5f87cfb21ad0a59169bcdd7b';
 
 ///
 /// サインイン中かどうか
 ///
 ///
-/// Copied from [isSignedIn].
-@ProviderFor(isSignedIn)
-final isSignedInProvider = AutoDisposeProvider<bool>.internal(
-  isSignedIn,
-  name: r'isSignedInProvider',
+/// Copied from [signedIn].
+@ProviderFor(signedIn)
+final signedInProvider = AutoDisposeProvider<bool>.internal(
+  signedIn,
+  name: r'signedInProvider',
   debugGetCreateSourceHash:
-      const bool.fromEnvironment('dart.vm.product') ? null : _$isSignedInHash,
+      const bool.fromEnvironment('dart.vm.product') ? null : _$signedInHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );
 
-typedef IsSignedInRef = AutoDisposeProviderRef<bool>;
+typedef SignedInRef = AutoDisposeProviderRef<bool>;
+String _$userIdHash() => r'b04b6e432625c4a9d6c9643e7f6182a7c53ec8c2';
+
+///
+/// ユーザーID
+///
+///
+/// Copied from [userId].
+@ProviderFor(userId)
+final userIdProvider = AutoDisposeProvider<String>.internal(
+  userId,
+  name: r'userIdProvider',
+  debugGetCreateSourceHash:
+      const bool.fromEnvironment('dart.vm.product') ? null : _$userIdHash,
+  dependencies: null,
+  allTransitiveDependencies: null,
+);
+
+typedef UserIdRef = AutoDisposeProviderRef<String>;
 String _$firebaseUserNotifierHash() =>
     r'bf3a0d9d05416db3fbaf1ace018fbbf3ad36d20c';
 
