@@ -1,10 +1,10 @@
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
-/// サインインの流れをまとめておくクラス
-class SignInService {
-  /// サインイン開始
-  Future<void> start() async {
+/// 通信の流れをまとめておくサービスクラス
+class AuthService {
+  /// サインイン
+  Future<void> signIn() async {
     /* Google OAuth と通信 */
 
     // あらかじめ登録しておいたクライアントID
@@ -46,5 +46,10 @@ class SignInService {
     //   email: 'ここにメールアドレス',
     //   password: 'ここにパスワード',
     // );
+  }
+
+  /// サインアウト
+  Future<void> signOut() async {
+    await FirebaseAuth.instance.signOut();
   }
 }

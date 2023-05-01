@@ -7,45 +7,57 @@ import 'package:flutter_note/sign_in/state.dart';
 part 'router.g.dart';
 
 /// ---------------------------------------------------------
+/// ページごとのパス    >> router/page_path.dart
+/// ---------------------------------------------------------
+class PagePath {
+  // サインイン画面のパス
+  static const signIn = '/sign-in';
+  // ホーム画面のパス
+  static const home = '/home';
+}
+
+/// ---------------------------------------------------------
 /// GoRouter    >> router/router.dart
 /// ---------------------------------------------------------
 @riverpod
 GoRouter router(RouterRef ref) {
-  // アプリが始まった時のパス
-  final initialLocation = Pages.signIn.path;
-
   // パスと画面の組み合わせ
   final routes = [
     // サインイン画面
     GoRoute(
-      path: Pages.signIn.path,
+      path: PagePath.signIn,
       builder: (_, __) => const SignInPage(),
     ),
 
-    // サインインが必要なページをシェルで囲む
+    // ユーザーIDスコープで囲むためのシェル
     ShellRoute(
       builder: (_, __, child) => UserIdScope(child: child),
       routes: [
         // ホーム画面
         GoRoute(
-          path: Pages.home.path,
+          path: PagePath.home,
           builder: (_, __) => const HomePage(),
         ),
+        // xxx画面
+        // yyy画面
+        // zzz画面
       ],
     ),
   ];
 
   // リダイレクト - 強制的に画面を変更する
   String? redirect(BuildContext context, GoRouterState state) {
+    // 表示しようとしている画面
+    final page = state.location;
     // サインインしているかどうか
     final signedIn = ref.read(signedInProvider);
 
-    if (signedIn && state.location == Pages.signIn.path) {
-      // Yes && サインイン画面 --> ホーム画面へ
-      return Pages.home.path;
+    if (signedIn && page == PagePath.signIn) {
+      // もうサインインしているのに サインイン画面を表示しようとしている --> ホーム画面へ
+      return PagePath.home;
     } else if (!signedIn) {
-      // No --> サインイン画面へ
-      return Pages.signIn.path;
+      // まだサインインしていない --> サインイン画面へ
+      return PagePath.signIn;
     } else {
       return null;
     }
@@ -61,7 +73,7 @@ GoRouter router(RouterRef ref) {
 
   // GoRouterを作成
   return GoRouter(
-    initialLocation: initialLocation,
+    initialLocation: PagePath.signIn,
     routes: routes,
     redirect: redirect,
     refreshListenable: listenable,

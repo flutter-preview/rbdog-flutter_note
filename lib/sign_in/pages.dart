@@ -1,28 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter_note/sign_in/state.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_note/sign_in/service.dart';
-
-// ページ一覧
-enum Pages {
-  // サインイン画面
-  signIn,
-  // ホーム画面
-  home,
-}
-
-// ページごとのパス
-extension PagePath on Pages {
-  String get path {
-    switch (this) {
-      case Pages.signIn:
-        return '/sign-in';
-      case Pages.home:
-        return '/home';
-    }
-  }
-}
+import 'package:flutter_note/sign_in/state.dart';
 
 /// ---------------------------------------------------------
 /// サインイン画面    >> pages/sign_in.dart
@@ -35,13 +14,13 @@ class SignInPage extends ConsumerWidget {
     // ボタン
     final button = ElevatedButton(
       onPressed: () async {
-        // ユースケースを呼び出す
-        final usecase = SignInService();
-        await usecase.start().catchError((e) {
-          debugPrint('サインインできませんでした $e');
-          return null;
-        });
-        debugPrint('サインイン完了しました');
+        // サービスを呼び出す
+        final service = AuthService();
+        await service.signIn().catchError(
+          (e) {
+            debugPrint('サインインできませんでした $e');
+          },
+        );
       },
       child: const Text('サインイン'),
     );
@@ -68,16 +47,24 @@ class HomePage extends ConsumerWidget {
 
     // ボタン
     final button = ElevatedButton(
-      onPressed: () {
-        // Firebaseと通信してサインアウトする
-        FirebaseAuth.instance.signOut();
+      onPressed: () async {
+        // サービスを呼び出す
+        final service = AuthService();
+        await service.signOut().catchError(
+          (e) {
+            debugPrint('サインアウトできませんでした $e');
+          },
+        );
       },
       child: const Text('サインアウト'),
     );
 
     // 画面全体
     return Scaffold(
-      appBar: AppBar(title: const Text('ホーム画面')),
+      appBar: AppBar(
+        title: const Text('ホーム画面'),
+        backgroundColor: Colors.red,
+      ),
       body: Center(
         // 縦に並べる
         child: Column(
