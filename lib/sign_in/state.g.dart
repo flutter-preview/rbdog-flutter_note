@@ -6,7 +6,25 @@ part of 'state.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$userHash() => r'2cf254520bccdca1749af1634de7c92e9ea344a4';
+String _$userChangesHash() => r'4b418a07a9bb38d37b0f5fe2676bb7f58267eaeb';
+
+///
+/// FirebaseのユーザーをAsyncValue型で管理するプロバイダー
+///
+///
+/// Copied from [userChanges].
+@ProviderFor(userChanges)
+final userChangesProvider = AutoDisposeStreamProvider<User?>.internal(
+  userChanges,
+  name: r'userChangesProvider',
+  debugGetCreateSourceHash:
+      const bool.fromEnvironment('dart.vm.product') ? null : _$userChangesHash,
+  dependencies: null,
+  allTransitiveDependencies: null,
+);
+
+typedef UserChangesRef = AutoDisposeStreamProviderRef<User?>;
+String _$userHash() => r'3cc9ecd667fcb1fd39e74d498ecab726c98cf46a';
 
 ///
 /// ユーザー
@@ -60,25 +78,4 @@ final userIdProvider = AutoDisposeProvider<String>.internal(
 );
 
 typedef UserIdRef = AutoDisposeProviderRef<String>;
-String _$firebaseUserNotifierHash() =>
-    r'bf3a0d9d05416db3fbaf1ace018fbbf3ad36d20c';
-
-///
-/// Firebaseのユーザーを管理するノティファイヤー
-///
-///
-/// Copied from [FirebaseUserNotifier].
-@ProviderFor(FirebaseUserNotifier)
-final firebaseUserNotifierProvider =
-    AutoDisposeStreamNotifierProvider<FirebaseUserNotifier, User?>.internal(
-  FirebaseUserNotifier.new,
-  name: r'firebaseUserNotifierProvider',
-  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-      ? null
-      : _$firebaseUserNotifierHash,
-  dependencies: null,
-  allTransitiveDependencies: null,
-);
-
-typedef _$FirebaseUserNotifier = AutoDisposeStreamNotifier<User?>;
 // ignore_for_file: unnecessary_raw_strings, subtype_of_sealed_class, invalid_use_of_internal_member, do_not_use_environment, prefer_const_constructors, public_member_api_docs, avoid_private_typedef_functions

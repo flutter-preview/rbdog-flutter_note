@@ -6,15 +6,12 @@ import 'package:firebase_auth/firebase_auth.dart';
 part 'state.g.dart';
 
 ///
-/// Firebaseのユーザーを管理するノティファイヤー
+/// FirebaseのユーザーをAsyncValue型で管理するプロバイダー
 ///
 @riverpod
-class FirebaseUserNotifier extends _$FirebaseUserNotifier {
-  @override
-  Stream<User?> build() {
-    // Firebaseからユーザーの変化を教えてもらう
-    return FirebaseAuth.instance.authStateChanges();
-  }
+Stream<User?> userChanges(UserChangesRef ref) {
+  // Firebaseからユーザーの変化を教えてもらう
+  return FirebaseAuth.instance.authStateChanges();
 }
 
 ///
@@ -22,8 +19,8 @@ class FirebaseUserNotifier extends _$FirebaseUserNotifier {
 ///
 @riverpod
 User? user(UserRef ref) {
-  final user = ref.watch(firebaseUserNotifierProvider);
-  return user.when(
+  final userChanges = ref.watch(userChangesProvider);
+  return userChanges.when(
     loading: () => null,
     error: (_, __) => null,
     data: (d) => d,

@@ -63,7 +63,7 @@ GoRouter router(RouterRef ref) {
     }
   }
 
-  // Riverpod と GoRouter を連動させるコード
+  // リフレッシュリスナブル - Riverpod と GoRouter を連動させるコード
   // サインイン状態が切り替わったときに GoRouter が反応する
   final listenable = ValueNotifier<Object?>(null);
   ref.listen<Object?>(signedInProvider, (_, newState) {
