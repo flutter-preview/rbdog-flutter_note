@@ -1005,10 +1005,9 @@ packages:
   ui_router:
     dependency: "direct main"
     description:
-      name: ui_router
-      sha256: b0a8e74a7cc22db5c4d65aa6381a6013337345c1109ab3c1942db02e5164c79d
-      url: "https://pub.dev"
-    source: hosted
+      path: "../../Doggle/ui_router"
+      relative: true
+    source: path
     version: "3.2.0"
   uuid:
     dependency: transitive

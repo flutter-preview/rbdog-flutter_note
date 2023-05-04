@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_note/sign_in/service.dart';
-import 'package:flutter_note/sign_in/state.dart';
+import 'package:flutter_note/part24/service.dart';
+import 'package:flutter_note/part24/state.dart';
 
 /// ---------------------------------------------------------
 /// サインイン画面    >> pages/sign_in.dart
