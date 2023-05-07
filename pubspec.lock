@@ -285,10 +285,10 @@ packages:
     dependency: "direct main"
     description:
       name: firebase_auth
-      sha256: "7f2124b9a3573099aaaaab8d6157032725d7e45593be0b80ab3b8ddeb7051c42"
+      sha256: e946a21254784116d32e497e09b851b4d03a3c65880e80d6939a720dfce88aed
       url: "https://pub.dev"
     source: hosted
-    version: "4.2.10"
+    version: "4.2.2"
   firebase_auth_platform_interface:
     dependency: transitive
     description:
@@ -1005,9 +1005,10 @@ packages:
   ui_router:
     dependency: "direct main"
     description:
-      path: "../../Doggle/ui_router"
-      relative: true
-    source: path
+      name: ui_router
+      sha256: b0a8e74a7cc22db5c4d65aa6381a6013337345c1109ab3c1942db02e5164c79d
+      url: "https://pub.dev"
+    source: hosted
     version: "3.2.0"
   uuid:
     dependency: transitive

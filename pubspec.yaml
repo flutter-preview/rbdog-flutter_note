@@ -25,7 +25,6 @@ dependencies:
   pixel_color_image: 1.2.2
   web_socket_channel:
   ui_router:
-    path: ./../../Doggle/ui_router
   firebase_core:
   firebase_analytics:
   firebase_auth:
