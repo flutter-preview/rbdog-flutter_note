@@ -6,9 +6,6 @@ version: 1.0.0+1
 environment:
   sdk: ">=2.17.0 <3.0.0"
 
-scripts:
-  doc: dart scripts/doc.dart
-
 dependencies:
   flutter:
     sdk: flutter
@@ -24,7 +21,6 @@ dependencies:
   go_router:
   pixel_color_image: 1.2.2
   web_socket_channel:
-  ui_router:
   firebase_core:
   firebase_analytics:
   firebase_auth:
@@ -44,4 +40,3 @@ flutter:
   assets:
     - assets/images/
     - assets/google_fonts/
-  uses-material-design: true
