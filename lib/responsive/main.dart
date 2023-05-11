@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_note/responsive/responsive_nav_view.dart';
-import 'package:flutter_note/screen_pod/screen_pod.dart';
+import 'package:flutter_note/part25/screen_pod.dart';
 
 void main() async {
   const examplePage = ExamplePage();
@@ -53,28 +53,40 @@ class ExamplePage extends StatelessWidget {
           label: 'Home',
           icon: () => Icons.home,
           body: () => const Center(
-            child: Text('A'),
+            child: Text(
+              'ホーム画面',
+              style: TextStyle(fontSize: 60),
+            ),
           ),
         ),
         NavPage(
           label: 'Search',
           icon: () => Icons.search,
           body: () => const Center(
-            child: Text('B'),
+            child: Text(
+              'けんさく画面',
+              style: TextStyle(fontSize: 60),
+            ),
           ),
         ),
         NavPage(
           label: 'Share',
           icon: () => Icons.share,
           body: () => const Center(
-            child: Text('C'),
+            child: Text(
+              '共有画面',
+              style: TextStyle(fontSize: 60),
+            ),
           ),
         ),
         NavPage(
           label: 'Profile',
           icon: () => Icons.person,
           body: () => const Center(
-            child: Text('D'),
+            child: Text(
+              'プロフィール画面',
+              style: TextStyle(fontSize: 60),
+            ),
           ),
         ),
       ],
