@@ -18,8 +18,8 @@ class MyPageBody extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(Sizes.p20),
       color: MyColors.lightGrey,
-      child: Column(
-        children: const [
+      child: const Column(
+        children: [
           PointSection(
             silverPoints: Fixtures.slverPoints,
             goldPoints: Fixtures.goldPoints,

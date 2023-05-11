@@ -4,6 +4,10 @@ import 'package:flutter_note/part11/page_b.dart';
 import 'package:flutter_note/part11/page_c.dart';
 import 'package:go_router/go_router.dart';
 
+/*
+  最新のFlutterに対応するため、動画と少しコードが変わりました
+*/
+
 main() {
   final app = App();
   runApp(app);
@@ -20,15 +24,15 @@ class App extends StatelessWidget {
     routes: [
       GoRoute(
         path: '/a',
-        builder: (context, state) => PageA(),
+        builder: (context, state) => const PageA(),
       ),
       GoRoute(
         path: '/b',
-        builder: (context, state) => PageB(),
+        builder: (context, state) => const PageB(),
       ),
       GoRoute(
         path: '/c',
-        builder: (context, state) => PageC(),
+        builder: (context, state) => const PageC(),
       ),
     ],
   );

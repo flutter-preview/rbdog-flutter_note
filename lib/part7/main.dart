@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 
+/*
+  最新のFlutterに対応するため、動画と少しコードが変わりました
+*/
+
 void main() {
   // ボタンを押したら呼ばれる関数
   xxxx() {
@@ -11,7 +15,7 @@ void main() {
   // ボタン本体
   final button = ElevatedButton(
     onPressed: xxxx,
-    child: Text('押してみて'),
+    child: const Text('押してみて'),
     style: ElevatedButton.styleFrom(
       // MEMO: primary は古くなったので backgroundColor へ変更しました
       backgroundColor: Colors.green,
@@ -26,5 +30,6 @@ void main() {
       ),
     ),
   );
+
   runApp(a);
 }

@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+/*
+  最新のFlutterに対応するため、動画と少しコードが変わりました
+*/
+
 void main() {
-  final app = MaterialApp(home: Home());
-  final scope = ProviderScope(child: app);
+  const app = MaterialApp(home: Home());
+  const scope = ProviderScope(child: app);
   runApp(scope);
 }
 
@@ -16,7 +20,7 @@ final valueProvider = StateProvider((ref) {
 });
 
 final rangeProvider = StateProvider((ref) {
-  return RangeValues(0.1, 0.9);
+  return const RangeValues(0.1, 0.9);
 });
 
 class Home extends ConsumerWidget {

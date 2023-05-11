@@ -22,7 +22,7 @@ Widget buildImage(BuildContext context, Image image) {
       // 後ろに隠れる画像
       image,
       // 同じ大きさのWidgetを前におく
-      Positioned.fill(
+      const Positioned.fill(
         child: ColoredBox(color: Colors.black), // 前に置きたい Widget
       ),
     ],

@@ -3,6 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+/*
+  最新のFlutterに対応するため、動画と少しコードが変わりました
+*/
+
 /// メイン関数
 void main() {
   // OFL を守るために このコードが必要
@@ -56,7 +60,7 @@ class HomePage extends StatelessWidget {
     // ボタン
     final button = ElevatedButton(
       onPressed: onPressed,
-      child: Text('ボタン'),
+      child: const Text('ボタン'),
     );
 
     return Scaffold(

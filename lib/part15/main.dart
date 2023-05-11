@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+/*
+  最新のFlutterに対応するため、動画と少しコードが変わりました
+*/
+
 void main() {
   const app = MaterialApp(home: Home());
   const scope = ProviderScope(child: app);
@@ -96,9 +100,9 @@ class Home extends ConsumerWidget {
         ElevatedButton(
           onPressed: () {
             // 選ばれたラジオボタンIDを確認する
-            print(radioId);
+            debugPrint(radioId);
             // 選ばれたチェックボックスIDを確認する
-            print(checkedIds);
+            debugPrint(checkedIds.toString());
           },
           child: const Text('OK'),
         ),

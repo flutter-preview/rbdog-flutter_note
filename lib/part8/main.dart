@@ -1,3 +1,9 @@
+// ignore_for_file: sized_box_for_whitespace
+
+/*
+  最新のFlutterに対応するため、動画と少しコードが変わりました
+*/
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -24,7 +30,7 @@ void main() {
   // ボタン
   final button = ElevatedButton(
     onPressed: xxxx,
-    child: Text('ボタン'),
+    child: const Text('ボタン'),
   );
 
   // アプリ
