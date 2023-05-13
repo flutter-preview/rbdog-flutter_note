@@ -19,7 +19,7 @@ dependencies:
   liveroom:
   percent_indicator:
   go_router:
-  pixel_color_image: 1.2.2
+  pixel_color_image:
   web_socket_channel:
   firebase_core:
   firebase_analytics:
@@ -27,14 +27,22 @@ dependencies:
   google_sign_in:
   device_preview:
 
+# firebase_auth が対応するまでの間一時的に必要
+dependency_overrides:
+  firebase_core_platform_interface: ^4.7.0
+  firebase_auth_platform_interface: ^6.14.0
+  firebase_core: ^2.11.0
+  firebase_core_web: ^2.4.0
+  firebase_auth_web: ^5.4.0
+
 dev_dependencies:
   freezed:
   build_runner:
   json_serializable:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^1.0.0
-  riverpod_generator: 2.1.4
+  flutter_lints:
+  riverpod_generator:
 
 flutter:
   uses-material-design: true
