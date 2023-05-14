@@ -5,7 +5,7 @@ import 'package:go_router/go_router.dart';
 // 画面 C
 //
 class PageC extends StatelessWidget {
-  const PageC({Key? key}) : super(key: key);
+  const PageC({super.key});
 
   // 戻るボタンを押したとき
   back(BuildContext context) {

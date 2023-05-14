@@ -5,7 +5,7 @@ import 'package:go_router/go_router.dart';
 // 画面 A
 //
 class PageA extends StatelessWidget {
-  const PageA({Key? key}) : super(key: key);
+  const PageA({super.key});
 
   // 進むボタンを押したとき
   push(BuildContext context) {

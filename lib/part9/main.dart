@@ -17,7 +17,7 @@ final nicknameProvider = StateProvider<String>((ref) {
 
 // 画面
 class Sample extends ConsumerWidget {
-  const Sample({Key? key}) : super(key: key);
+  const Sample({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

@@ -5,9 +5,9 @@ class BananaCounter extends StatelessWidget {
   // バナナの数
   final int number;
   const BananaCounter({
-    Key? key,
+    super.key,
     required this.number,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -15,7 +15,7 @@ main() {
 
 // アプリ全体
 class App extends StatelessWidget {
-  App({Key? key}) : super(key: key);
+  App({super.key});
 
   final router = GoRouter(
     // パス (アプリが起動したとき)

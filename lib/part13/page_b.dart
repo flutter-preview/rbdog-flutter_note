@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 // 画面 B
 //
 class PageB extends StatelessWidget {
-  const PageB({Key? key}) : super(key: key);
+  const PageB({super.key});
 
   @override
   Widget build(BuildContext context) {

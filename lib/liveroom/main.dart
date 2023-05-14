@@ -29,7 +29,7 @@ final liveroom = Liveroom();
 
 /// ホーム画面
 class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+  const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -70,7 +70,7 @@ class HomePage extends StatelessWidget {
 
 /// メッセージ画面
 class MessagePage extends StatefulWidget {
-  const MessagePage({Key? key}) : super(key: key);
+  const MessagePage({super.key});
 
   @override
   MessagePageState createState() => MessagePageState();
@@ -152,10 +152,10 @@ class MessagePageState extends State<MessagePage> {
 /// ホーム画面のレイアウト
 class HomePageLayout extends StatelessWidget {
   const HomePageLayout({
+    super.key,
     required this.onTapCreate,
     required this.onTapJoin,
-    Key? key,
-  }) : super(key: key);
+  });
 
   final void Function() onTapCreate;
   final void Function() onTapJoin;
@@ -188,8 +188,8 @@ class MessagePageLayout extends StatelessWidget {
     required this.messages,
     required this.onTapExit,
     required this.onTapSend,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   final List<String> messages;
   final void Function() onTapExit;
