@@ -25,7 +25,7 @@ void main() {
 //
 // * ライブルームのインスタンス
 //
-final liveroom = Liveroom();
+final liveroom = Liveroom(host: 'localhost', port: 3300);
 
 /// ホーム画面
 class HomePage extends StatelessWidget {
