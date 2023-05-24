@@ -8,7 +8,11 @@ part of 'text_form_riverpod.dart';
 
 String _$textNotifierHash() => r'13d317c5fd238710c716ac65960298cc23d6a99c';
 
-/// See also [TextNotifier].
+/// -----------------------------------------------------------
+/// ノティファイヤー & 自動で作られるプロバイダー - 文字を保存しておく
+/// -----------------------------------------------------------
+///
+/// Copied from [TextNotifier].
 @ProviderFor(TextNotifier)
 final textNotifierProvider =
     AutoDisposeNotifierProvider<TextNotifier, String>.internal(
