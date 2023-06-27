@@ -44,3 +44,9 @@ app.*.map.json
 /android/app/profile
 /android/app/release
 *.cache
+
+# 教材用にコメントアウト
+# 実際はここをアンコメントする
+# .env
+# env.g.dart
+
