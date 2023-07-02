@@ -16,15 +16,15 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       home: Scaffold(
         body: Center(
-          child: Overflow(),
+          child: ExampleOverflow(),
         ),
       ),
     );
   }
 }
 
-class Overflow extends StatelessWidget {
-  const Overflow({super.key});
+class ExampleOverflow extends StatelessWidget {
+  const ExampleOverflow({super.key});
 
   @override
   Widget build(BuildContext context) {
