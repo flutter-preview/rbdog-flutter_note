@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_note/todo_example/providers.dart';
+import 'package:flutter_note/qa/others/todo_example/providers.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_note/todo_example/todo_model.dart';
+import 'package:flutter_note/qa/others/todo_example/todo_model.dart';
 
 class TodoView extends ConsumerWidget {
   const TodoView({super.key});

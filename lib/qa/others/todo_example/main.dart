@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_note/todo_example/todo_view.dart';
+import 'package:flutter_note/qa/others/todo_example/todo_view.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 void main() {
