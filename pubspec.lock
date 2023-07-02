@@ -314,7 +314,7 @@ packages:
     source: hosted
     version: "4.2.2"
   firebase_auth_platform_interface:
-    dependency: "direct overridden"
+    dependency: transitive
     description:
       name: firebase_auth_platform_interface
       sha256: "00247ae9b9deb1d1ef3ff1b0c7a1103b51caf973b8a43f326595e414380fd5e2"
@@ -322,7 +322,7 @@ packages:
     source: hosted
     version: "6.15.0"
   firebase_auth_web:
-    dependency: "direct overridden"
+    dependency: transitive
     description:
       name: firebase_auth_web
       sha256: "2c273f8bd78ba5fcd955b85ac0cbba1e7568fee02f14ef9416befcb899a2aa9e"
@@ -338,7 +338,7 @@ packages:
     source: hosted
     version: "2.12.0"
   firebase_core_platform_interface:
-    dependency: "direct overridden"
+    dependency: transitive
     description:
       name: firebase_core_platform_interface
       sha256: b63e3be6c96ef5c33bdec1aab23c91eb00696f6452f0519401d640938c94cba2
@@ -346,7 +346,7 @@ packages:
     source: hosted
     version: "4.8.0"
   firebase_core_web:
-    dependency: "direct overridden"
+    dependency: transitive
     description:
       name: firebase_core_web
       sha256: "8c0f4c87d20e2d001a5915df238c1f9c88704231f591324205f5a5d2a7740a45"
